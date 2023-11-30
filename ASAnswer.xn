@@ -1,0 +1,4 @@
+on ASAnswer pDialogText,pBtnOne, pBtnTwo, pBtnThree
+	do "display dialog " & quote & pDialogText &quote as AppleScript
+	put the result
+end ASAnswer

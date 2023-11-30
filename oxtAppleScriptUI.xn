@@ -1,0 +1,247 @@
+-- This is OpenXtalk.org project generic xTalk-script wrapper library
+-- for using the AppleScript User Interaction suite, which is part of
+-- Apple's Standard Additions (included with macOS).
+-- This is being tested primarily against OpenXION, but it should be compatible with LiveCode, OXT,
+-- SuperCard, or any other xTalk that supports 'do myScript as AppleScript' syntax, at least to some degree.
+
+on answer pDialogType,pDialogText,pParam1,pParam2,pParam3,pParam4,pParam5,pParam6
+   put pDialogType,pDialogText,pParam1,pParam2,pParam3,pParam4,pParam5,pParam6
+   switch pDialogType
+   case normal
+      -- asAnswer pDialogText,pButtonItems,pDefaultBtnItem, pCancelBtnItem, pTitle, pIcon
+      if pParam1 is "with" then
+        put asAnswer(pDialogText, (pParam2,pParam3,pParam4))
+      else
+        put asAnswer(pDialogText)
+      end if
+
+   case file
+     --  function asAnswerFile pDialogText, pTypes, pInvisibles, pShowBundleContents
+     if pParam1 is "of type" then
+       put asAnswerFile(pDialogText,pParam2,false,false)
+     else
+       put asAnswerFile(pDialogText,"*.*")
+     end if
+
+   case files
+    if pDialogText is empty then put "Select A Folder" into pDialogText
+     --  function asAnswerFiles pDialogText, pTypes, pInvisibles, pShowBundleContents
+     if pParam1 is "of type" then
+       put asAnswerFiles(pDialogText,pParam2,false,false)
+     else
+       put asAnswerFiles(pDialogText,"*.*",true,true)
+     end if
+
+     case folder
+      if pDialogText is empty then put "Select Folder(s)" into pDialogText
+       -- function asAnswerFolder pDialogText, pInvisibles, pShowBundleContents, pDefaultPath
+       if pParam1 is "of type" then
+         put asAnswerFolder(pDialogText,pParam2,false,false)
+       else
+         put asAnswerFolder(pDialogText,true,true,)
+       end if
+   default
+   end switch
+end answer
+
+
+on ask pDialogType,pDialogText,pParam1,pParam2,pParam3,pParam4,pParam5,pParam6
+   put pDialogType,pDialogText,pParam1,pParam2,pParam3,pParam4,pParam5,pParam6
+   switch pDialogType
+   case normal
+    --  function asAsk pDialogText, pDefaultAnswer, pBtnOne, pBtnTwo, pBtnThree, pIcon, pTitle
+      -- if pParam1 is "with" then
+      --  put asAnswer(pDialogText, (pParam2,pParam3,pParam4))
+      -- else
+     put asAsk(pDialogText)
+      --  end if
+
+   case file
+   -- function asAskFile pDialogText, pDefaultName, pInvisibles, pShowBundleContents
+    -- if pParam1 is "with name" then
+       put asAskFile(pDialogText,pParam2,false,false)
+     -- end if
+   default
+     put pDialogType
+   end switch
+end ask
+
+
+function asAnswer pDialogText,pButtonItems, pDefaultBtnItem, pCancelBtnItem, pTitle, pIcon
+   put "display dialog " & quote & pDialogText &quote into tAppleScript
+   if pButtonItems is not empty then
+      put " buttons {" after tAppleScript
+      repeat with x = 1 to the number of items in pButtonItems
+         put quote & item x of pButtonItems & quote & "," after tAppleScript
+      end repeat
+      delete the last character of tAppleScript -- remove last comma
+      put "}" after tAppleScript
+   end if
+   if pDefaultBtnItem is not empty then
+      put " default button " & pDefaultBtnItem after tAppleScript
+   end if
+   if pCancelBtnItem is not empty then
+      put " cancel button " & pCancelBtnItem after tAppleScript
+   end if
+   if pIcon is empty or pIcon is "note" then
+      put " with icon note" after tAppleScript
+   else if pIcon is "caution" or pIcon is "stop" then
+      put " with icon " &pIcon after tAppleScript
+   end if
+   if pTitle is not empty then put " with title " &quote& pTitle & quote after tAppleScript
+   do tAppleScript as AppleScript
+   put the result into tResult
+   Delete char 1 to 16 of tResult
+   return tResult
+end asAnswer
+
+function asAsk pDialogText, pDefaultAnswer, pBtnOne, pBtnTwo, pBtnThree, pIcon, pTitle
+   put "display dialog " & quote & pDialogText &quote into tAppleScript
+   put " default answer " &quote & pDefaultAnswer &quote after tAppleScript
+   if pBtnOne is empty then put "OK" into pBtnOne
+   put " buttons {"&quote& pBtnOne &quote after tAppleScript
+   if pBtnTwo is not empty then put ","&quote& pBtnTwo &quote after tAppleScript
+   if pBtnThree is not empty then put ","&quote& pBtnThree &quote after tAppleScript
+   Put "}" after tAppleScript
+   if pIcon is empty or pIcon is "note" then
+      put " with icon note" after tAppleScript
+   else if pIcon is "caution" or pIcon is "stop" then
+      put " with icon " &pIcon after tAppleScript
+   end if
+   if pTitle is not empty then put " with title " &quote& pTitle & quote after tAppleScript
+   do tAppleScript as AppleScript
+   put the result into tResult
+   Delete char 1 to 16 of item 1 of tResult
+   Delete char 1 to 15 of item 2 of tResult
+   return tResult
+end asAsk
+
+function asAnswerFile pDialogText, pTypes, pInvisibles, pShowBundleContents
+   put "choose file with prompt " & quote & pDialogText &quote into tAppleScript
+   Put " of type " & quote & pTypes & quote after tAppleScript
+   if pInvisibles is true then put " invisibles true" after tAppleScript
+   if pShowBundleContents is true then put " showing package contents true " & return after tAppleScript
+   -- Put tAppleScript & return
+   do tAppleScript as AppleScript
+   return the result
+end asAnswerFile
+
+function asAnswerFiles pDialogText, pTypes, pInvisibles, pShowBundleContents
+   put "choose file with prompt " & quote & pDialogText &quote into tAppleScript
+   Put " of type " & quote & pTypes & quote after tAppleScript
+   if pInvisibles is true then put " invisibles true" after tAppleScript
+   put " multiple selections allowed true " after tAppleScript
+   if pShowBundleContents is true then put " showing package contents true " after tAppleScript
+   -- Put tAppleScript & return
+   do tAppleScript as AppleScript
+   put the result into tResult
+   Delete char 1 to 16 of tResult
+   return tResult
+end asAnswerFiles
+
+function asAskFile pDialogText, pDefaultName, pInvisibles, pShowBundleContents
+   put "choose file name with prompt " & quote & pDialogText &quote into tAppleScript
+   if pDefaultName is empty then put "Untitled" into pDefaultName
+   put " default name " &quote & pDefaultName & quote after tAppleScript
+   if pShowBundleContents is true then put " showing package contents true " after tAppleScript
+   -- Put tAppleScript & return
+   -- the default file location
+   do tAppleScript as AppleScript
+   put the result into tResult
+   Delete char 1 to 16 of tResult
+   return tResult
+end asAskFile
+
+function asAnswerFolder pDialogText, pInvisibles, pShowBundleContents, pDefaultPath
+   put "choose folder with prompt " & quote & pDialogText &quote into tAppleScript
+   if pInvisibles is true then put " invisibles true" after tAppleScript
+   if pShowBundleContents is true then put " showing package contents true " after tAppleScript
+   Put tAppleScript & return
+   -- the default file location
+   do tAppleScript as AppleScript
+   put the result into tResult
+   Put tResult
+   Delete word 1 of tResult
+   return tResult
+end asAnswerFolder
+
+function asAnswerAlert pDialogText, pSubMessage, pBtnOne, pBtnTwo, pBtnThree, pCritical
+   put "display alert " & quote & pDialogText &quote into tAppleScript
+   if pSubMessage is not empty then put " message "&quote& pSubMessage &quote after tAppleScript
+   if pCritical is true then put " as critical " after tAppleScript
+   if pBtnOne is empty then put "OK" into pBtnOne
+   put " buttons {"&quote& pBtnOne &quote after tAppleScript
+   if pBtnTwo is not empty then put ","&quote& pBtnTwo &quote after tAppleScript
+   if pBtnThree is not empty then put ","&quote& pBtnThree &quote after tAppleScript
+   Put "}" after tAppleScript
+   do tAppleScript as AppleScript
+   put the result into tResult
+   -- Delete char 1 to 16 of tResult
+   return tResult
+end asAnswerAlert
+
+function asChooseFromList pPrompt, pItemList, pDefaultItems, pOKBtn, pCancelBtn, pMultiSelect, pEmptySelect
+   put "choose from list {" into tAppleScript
+   repeat with x = 1 to the number of items in pItemList
+      put quote & item x of pItemList & quote & "," after tAppleScript
+   end repeat
+   delete the last character of tAppleScript -- remove last comma
+   put "}" after tAppleScript
+   put " with prompt "& quote& pPrompt &quote after tAppleScript
+   if pDefaultItems is not empty then
+      if pDefaultItems is an integer then
+         put "NUMBER"
+      end if
+      if the number of items in pDefaultItems > 1 then
+         put "MultiDefaultItems"
+      end if
+      put " default items {" after tAppleScript
+      repeat with x = 1 to the number of items in pDefaultItems
+         put quote & item x of pItemList & quote & "," after tAppleScript
+      end repeat
+      delete the last character of tAppleScript -- remove last comma
+      put "}" after tAppleScript
+   end if
+   if pOKBtn is not empty then
+      if the first char of pOKBtn is quote then
+         delete the first char of pOKBtn
+      end if
+      if the last char of pOKBtn is quote then
+         delete the last char of pOKBtn
+      end if
+      put " OK button name {"& quote& pOKBtn &quote&"}" after tAppleScript
+   end if
+   if pCancelBtn is not empty then
+      if the first char of pCancelBtn = quote then delete the first char of pOKBtn
+      if the last char of pCancelBtn = quote then delete the last char of pOKBtn
+      put " cancel button name {"& quote& pCancelBtn &quote&"}" after tAppleScript
+   end if
+   if pMultiSelect is true and pEmptySelect is true then
+      put " with multiple selections allowed and empty selection allowed" after tAppleScript
+   end if
+   if pMultiSelect is not true and pEmptySelect is true then
+      put " with empty selection allowed" after tAppleScript
+   end if
+   if pMultiSelect is true and pEmptySelect is not true then
+      put " with multiple selections allowed" after tAppleScript
+   end if
+   put tAppleScript
+   do tAppleScript as AppleScript
+   if the result is not empty then
+      return the result
+   end if
+end asChooseFromList
+
+-- NOT WORKING:
+On macToast pToastMsg, pToastTitle, pToastSubTitle, pToastSound
+   -- replace pToastMsg,quote,"\"&quote
+   -- put replace(pToastTitle,quote,"\"&quote) into pToastTitle
+   -- put replace(pToastSubTitle,quote,"\"&quote) into pToastSubTitle
+   -- put replace(pToastMsg, return,"\r") into pToastMsg
+   -- put replace(pToastTitle, return," ") into pToastSubTitle
+   -- put replace(pToastSubTitle, return," ") into pToastSubTitle
+   -- if pToastSound <> empty then
+   --   put " sound name " &quote& pToastSound &quote into tToastSoundScrpt
+   -- end if
+   do ("display notification " &quote& pToastMsg &quote& " with title "&quote& pToastTitle &quote&" subtitle "&quote& pToastSubTitle &quote& tToastSoundScrpt) as AppleScript
+end macToast

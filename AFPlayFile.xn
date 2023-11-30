@@ -1,0 +1,5 @@
+On AFPlayFile pFileToPlay
+	put "afplay " & quote & pFileToPlay & quote into tCommand
+	put tCommand
+	do tCommand as bash
+end AFPlayFile

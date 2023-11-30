@@ -1,0 +1,13 @@
+#!/bin/sh
+cp -f OpenXION.jar /usr/lib/OpenXION.jar
+cp -f XIONDoc.jar /usr/lib/XIONDoc.jar
+cp -f jline.jar /usr/lib/jline.jar
+echo "#!/bin/sh" > /usr/bin/xe
+echo "#!/bin/sh" > /usr/bin/xion
+echo "#!/bin/sh" > /usr/bin/xiondoc
+echo 'java -Xmx1024M -jar "/usr/lib/OpenXION.jar" -e "$*"' >> /usr/bin/xe
+echo 'java -Xmx1024M -jar "/usr/lib/OpenXION.jar" "$@"' >> /usr/bin/xion
+echo 'java -Xmx1024M -jar "/usr/lib/XIONDoc.jar" "$@"' >> /usr/bin/xiondoc
+chmod +x /usr/bin/xe
+chmod +x /usr/bin/xion
+chmod +x /usr/bin/xiondoc
