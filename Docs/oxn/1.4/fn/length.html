@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>OpenXION 1.4 Functions - length</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.4, function, functions, length">
+<meta name="description" content="This page describes the length function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>length</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">length</code> <code class="keyword">of</code> <em class="metavariable">factor</em></p>
+<p class="block syntax indent0"><code class="keyword">length</code> <code class="keyword">(</code> <em class="metavariable">expression</em> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Factor</em> and <em class="metavariable">expression</em> yield <code><a href="../dt/string.html">string</a></code>s. </p>
+<h3>Example</h3>
+<p class="block paragraph indent0"> <code>put <code>length</code>(&quot;tail&quot;) into it -- yields 4</code> </p>
+<p class="block paragraph indent0"> <code>put <code>length</code>(&quot;Nu &#228;r det slut&#8230;&quot;) -- yields 15</code> </p>
+<p class="block paragraph indent0"> <code>if the <code>length</code> of word n of steve &gt; 25 &#172;<br/> &nbsp;&nbsp;then add 1 to fogIndex</code> </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>length</code> function returns the number of characters (including spaces, tabs, line breaks, and other control and formatting characters) in the <code><a href="../dt/string.html">string</a></code> passed to it. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> The expression <code><code>length</code>(<em class="metavariable">factor</em>)</code> is identical in effect to <code>the number of characters in <em class="metavariable">factor</em></code> but is more efficient. </p>
+<h3>Synonym</h3>
+<p class="block paragraph indent0"><code><a href="../fn/len.html">len</a></code></p>
+</body>
+</html>

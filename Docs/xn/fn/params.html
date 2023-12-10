@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>XION Scripting Language Standard Functions - params</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, XION Scripting Language Standard, function, functions, params">
+<meta name="description" content="This page describes the params function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>params</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">the</code> <code class="keyword">params</code></p>
+<p class="block syntax indent0"><code class="keyword">params</code> <code class="keyword">()</code></p>
+<h3>Example</h3>
+<pre class="block script indent0">
+put the params
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> In XION, the <code>params</code> function returns a <code><a href="../dt/list.html">list</a></code> of the parameters passed to the currently executing handler, not including the message name. In other words, <code>the params</code> looks like: </p>
+<p class="block paragraph indent0"> <code><em class="metavariable">parameter</em>,<em class="metavariable">parameter</em>,<em class="metavariable">parameter</em>,...</code> </p>
+<p class="block paragraph indent0"> In HyperTalk, the <code>params</code> function returns a string containing the message name and the entire parameter list passed to the currently executing handler. The returned string is suitable for the <code><a href="../cs/do.html">do</a></code> keyword (if the handler is a message handler) or the <code><a href="../fn/value.html">value</a></code> function (if the handler is a function handler). In other words, <code>the params</code> looks like: </p>
+<p class="block paragraph indent0"> <code><em class="metavariable">messageName</em> &quot;<em class="metavariable">parameter</em>&quot;,&quot;<em class="metavariable">parameter</em>&quot;,&quot;<em class="metavariable">parameter</em>&quot;,...</code> </p>
+<p class="block paragraph indent0"> or: </p>
+<p class="block paragraph indent0"> <code><em class="metavariable">functionName</em>(&quot;<em class="metavariable">parameter</em>&quot;,&quot;<em class="metavariable">parameter</em>&quot;,&quot;<em class="metavariable">parameter</em>&quot;,...)</code> </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../fn/param.html">param</a></code>, <code><a href="../fn/paramcount.html">paramCount</a></code></p>
+</body>
+</html>

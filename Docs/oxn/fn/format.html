@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>OpenXION Functions - format</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, function, functions, format">
+<meta name="description" content="This page describes the format function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>format</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.4)</li>
+<li>OpenXION Standard Module (1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">the</code> <code class="keyword">format</code> <code class="keyword">of</code> <code class="keyword">(</code> <em class="metavariable">format</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <em class="metavariable">parameter</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <em class="metavariable">parameter</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <code class="keyword">...</code><span class="metasymbol">]</span></span><span class="metasymbol">]</span></span><span class="metasymbol">]</span></span> <code class="keyword">)</code></p>
+<p class="block syntax indent0"><code class="keyword">format</code> <code class="keyword">(</code> <em class="metavariable">format</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <em class="metavariable">parameter</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <em class="metavariable">parameter</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <code class="keyword">...</code><span class="metasymbol">]</span></span><span class="metasymbol">]</span></span><span class="metasymbol">]</span></span> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Format</em> yields a format <code><a href="../dt/string.html">string</a></code>. <em class="metavariable">Parameter</em> yields any <code><a href="../dt/variant.html">variant</a></code>. </p>
+<h3>Example</h3>
+<p class="block paragraph indent0"> <code><code>format</code>(&quot;Hello, ^1!&quot;, &quot;World&quot;)</code> </p>
+<p class="block paragraph indent0"> <code><code>format</code>(&quot;^{^1?no items|one item|^1 items}&quot;, myCount)</code> </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>format</code> function returns a string produced from the given <em class="metavariable">format</em> string using the given <em class="metavariable">parameter</em>s. </p>
+<p class="block paragraph indent0"> Sequences in the <em class="metavariable">format</em> string starting with the ^ character are replaced with <em class="metavariable">parameter</em>s, conditional text, or special characters as described below. </p>
+<p class="block paragraph indent0"> A ^ character followed by an integer is replaced with a parameter. The parameter after the format string is parameter 1. The parameter number may be followed by a lowercase <code>n</code> and a minimum string length; a lowercase <code>m</code> and a maximum string length; a lowercase <code>l</code> and a character for left padding; or a lowercase <code>r</code> and a character for right padding. Optionally, the sequence can end with one of the following format specifiers: </p>
+<table class="block table indent0 border0">
+<tr>
+<td><code>s</code></td>
+<td>a string (the default)</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>a list, delimited by commas</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>a list, delimited by a comma followed by a space</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>an integer, using the current <code><a href="../pr/numberformat.html">numberFormat</a></code></td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>an integer, using the local number format</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>a number, using the current <code><a href="../pr/numberformat.html">numberFormat</a></code></td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>a number, using the local number format</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>an octal number</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>a hexadecimal number, in lowercase</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>a hexadecimal number, in uppercase</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>a complex, using the current <code><a href="../pr/numberformat.html">numberFormat</a></code></td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>a complex, using the local number format</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>a date</td>
+</tr>
+<tr>
+<td><code>t</code></td>
+<td>a time</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>a binary, without spacing between bytes</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>a binary, with spacing between bytes</td>
+</tr>
+</table>
+<p class="block paragraph indent0"> Finally, if the sequence will be followed by a digit or letter, a tilde (~) can be used to indicate the end of the sequence. </p>
+<p class="block paragraph indent0"> A ^ character followed by an opening brace is replaced with conditional text. The opening brace must be followed by an expression using only parameter numbers preceded by ^, string and number literals, and operators named using only symbols. A question mark (?) separates the expression from a list of alternatives. Each alternative is a format string of its own. The first alternative corresponds to a value of true or zero, the second alternative to a value of false or one, the third alternative to a value of two, and so on; the last alternative is chosen if the value is greater than the number of alternatives. Alternatives are delimited using vertical bars (|). Finally, a closing brace indicates the end of the list of alternatives. </p>
+<p class="block paragraph indent0"> Finally, the special sequences <code>^}</code>, <code>^|</code>, and <code>^^</code> are replaced with a literal closing brace, vertical bar, or caret, respectively. </p>
+<p class="block paragraph indent0"> The <code><a href="../fn/$0027.html">&#39;</a></code> form of this function is used with strings that should be localized. By running OpenXION with the <code>-M</code> parameter, a message file will be generated for your language and locale. By editing the message file, you or other people can translate your script&#39;s messages into other languages without having to modify the script itself. </p>
+<h3>Synonym</h3>
+<p class="block paragraph indent0"><code><a href="../fn/$0027.html">&#39;</a></code></p>
+</body>
+</html>

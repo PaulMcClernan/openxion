@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>OpenXION 1.0 Commands - modulo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.0, command, commands, modulo">
+<meta name="description" content="This page describes the modulo command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>modulo</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">modulo</code> <em class="metavariable">container</em> <code class="keyword">by</code> <em class="metavariable">number</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">rounding</code> <em class="metavariable">roundingMethod</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Number</em> yields an <code><a href="../dt/integer.html">integer</a></code>, a <code><a href="../dt/number.html">number</a></code>, or a <code><a href="../dt/complex.html">complex</a></code>. <em class="metavariable">Container</em> yields a container containing an <code><a href="../dt/integer.html">integer</a></code>, a <code><a href="../dt/number.html">number</a></code>, or a <code><a href="../dt/complex.html">complex</a></code>. <em class="metavariable">RoundingMethod</em> is <code class="keyword">up</code>, <code class="keyword">down</code>, or <code class="keyword">to</code>, <code class="keyword">toward</code>, or <code class="keyword">towards</code> <code class="keyword">zero</code>, <code class="keyword">infinity</code>, <code class="keyword">nearest</code>, <code class="keyword">even</code>, <code class="keyword">ceiling</code>, or <code class="keyword">floor</code>. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+modulo steve by 17
+</pre>
+<pre class="block script indent0">
+modulo line 13 of bill by 100
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>modulo</code> command divides the value of <em class="metavariable">container</em> by the value of <em class="metavariable">number</em> and leaves the remainder of the division in <em class="metavariable">container</em>. The value in the container must be an <code><a href="../dt/integer.html">integer</a></code>, a <code><a href="../dt/number.html">number</a></code>, or a <code><a href="../dt/complex.html">complex</a></code> and is replaced with the new value. </p>
+<h3>Notes</h3>
+<p class="block paragraph indent0"> The remainder is calculated as follows: </p>
+<p class="block paragraph indent0"> <em class="metavariable">remainder</em> = <em class="metavariable">container</em> - <em class="metavariable">number</em> * <em class="metavariable">roundingFunction</em> ( <em class="metavariable">container</em> / <em class="metavariable">number</em> ) </p>
+<p class="block paragraph indent0"> where <em class="metavariable">roundingFunction</em> is the function listed in the table below. </p>
+<p class="block paragraph indent0"> If no <em class="metavariable">roundingMethod</em> is specified, <code>to floor</code> is assumed. </p>
+<p class="block paragraph indent0"> The following table shows the correspondences among the various <em class="metavariable">roundingMethod</em>s, rounding functions, and division operators: </p>
+<table class="block table indent0 border0">
+<tr>
+<th><code>rounding</code> parameter</th>
+<th>function</th>
+<th>operator</th>
+<th><code>java.math.RoundingMode</code></th>
+</tr>
+<tr>
+<td><code>to ceiling</code></td>
+<td><code><a href="../fn/ceil.html">ceil</a></code></td>
+<td></td>
+<td><code>CEILING</code></td>
+</tr>
+<tr>
+<td><code>to floor</code></td>
+<td><code><a href="../fn/floor.html">floor</a></code></td>
+<td><code><a href="../op/div.html">div</a></code> / <code><a href="../op/mod.html">mod</a></code></td>
+<td><code>FLOOR</code></td>
+</tr>
+<tr>
+<td><code>up</code> / <code>to infinity</code></td>
+<td><code><a href="../fn/aug.html">aug</a></code></td>
+<td></td>
+<td><code>UP</code></td>
+</tr>
+<tr>
+<td><code>down</code> / <code>to zero</code></td>
+<td><code><a href="../fn/trunc.html">trunc</a></code></td>
+<td><code><a href="../op/quot.html">quot</a></code> / <code><a href="../op/rem.html">rem</a></code></td>
+<td><code>DOWN</code></td>
+</tr>
+<tr>
+<td><code>to nearest</code></td>
+<td><code><a href="../fn/round.html">round</a></code></td>
+<td></td>
+<td><code>HALF_UP</code></td>
+</tr>
+<tr>
+<td><code>to even</code></td>
+<td><code><a href="../fn/rint.html">rint</a></code></td>
+<td></td>
+<td><code>HALF_EVEN</code></td>
+</tr>
+</table>
+<p class="block paragraph indent0"> See the <code><a href="../fn/ceil.html">ceil</a></code>, <code><a href="../fn/floor.html">floor</a></code>, <code><a href="../fn/aug.html">aug</a></code>, <code><a href="../fn/trunc.html">trunc</a></code>, <code><a href="../fn/round.html">round</a></code>, and <code><a href="../fn/rint.html">rint</a></code> functions for descriptions of how these rounding methods work. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cm/add.html">add</a></code>, <code><a href="../cm/subtract.html">subtract</a></code>, <code><a href="../cm/multiply.html">multiply</a></code>, <code><a href="../cm/divide.html">divide</a></code>, <code><a href="../op/$0025.html">%</a></code>, <code><a href="../op/mod.html">mod</a></code>, <code><a href="../op/rem.html">rem</a></code></p>
+</body>
+</html>

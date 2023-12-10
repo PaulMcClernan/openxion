@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>OpenXION Extended Module Functions - atob</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Extended Module, function, functions, atob">
+<meta name="description" content="This page describes the atob function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>atob</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.3, 1.4)</li>
+<li>OpenXION Extended Module (1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">atob</code> <code class="keyword">of</code> <em class="metavariable">text</em></p>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">atob</code> <code class="keyword">of</code> <code class="keyword">(</code> <em class="metavariable">text</em> <code class="keyword">,</code> <em class="metavariable">algorithm</em> <code class="keyword">)</code></p>
+<p class="block syntax indent0"><code class="keyword">atob</code> <code class="keyword">(</code> <em class="metavariable">text</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <em class="metavariable">algorithm</em><span class="metasymbol">]</span></span> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Text</em> yields a <code>string</code>. <em class="metavariable">Algorithm</em> yields the name of an ASCII-to-binary decoding algorithm. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>atob</code> function decodes ASCII <em class="metavariable">text</em> back into binary data using the specified <em class="metavariable">algorithm</em>. If the <em class="metavariable">algorithm</em> is not specified, <code>base64</code> is the default. </p>
+<p class="block paragraph indent0"> The <code>atob</code> function supports the following <em class="metavariable">algorithm</em>s: </p>
+<table class="block table indent0 border0">
+<tr>
+<td><code>b64</code>, <code>base64</code></td>
+<td> The Base64 encoding scheme. Must provide the raw text without headers or footers. Whitespace is ignored. </td>
+</tr>
+<tr>
+<td><code>uu</code>, <code>uud</code>, <code>uudecode</code></td>
+<td> The <code>uuencode</code>/<code>uudecode</code> encoding scheme. Headers and footers are optional; if the header is provided, the footer must be as well, and vice versa. </td>
+</tr>
+<tr>
+<td><code>xx</code>, <code>xxd</code>, <code>xxdecode</code></td>
+<td> The <code>xxencode</code>/<code>xxdecode</code> encoding scheme. Headers and footers are optional; if the header is provided, the footer must be as well, and vice versa. </td>
+</tr>
+<tr>
+<td><code>hqx</code>, <code>binhex</code></td>
+<td> The encoding scheme used by BinHex, including run-length encoding. The beginning and ending colons are optional. Must provide the raw text without headers. Returns the raw binary data as encoded (separating out metadata, forks, and CRCs must be done manually). </td>
+</tr>
+<tr>
+<td><code>a85</code>, <code>ascii85</code></td>
+<td> The ASCII85 encoding scheme. The <code>&lt;~</code> and <code>~&gt;</code> markers are optional. The <code>y</code> character for a string of four spaces is supported. </td>
+</tr>
+<tr>
+<td><code>k85</code>, <code>kreative85</code></td>
+<td> A variant of the ASCII85 encoding scheme that uses a different alphabet. Must provide the raw text without markers. </td>
+</tr>
+<tr>
+<td><code>l85</code>, <code>legacy85</code></td>
+<td> Something Resplendence calls Base85. Don&#39;t use this. </td>
+</tr>
+</table>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../fn/btoa.html">btoa</a></code></p>
+</body>
+</html>

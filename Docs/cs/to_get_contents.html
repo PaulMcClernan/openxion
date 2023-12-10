@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>XION Control Structures - to get contents</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, control structure, control structures, to get contents">
+<meta name="description" content="This page describes the to get contents control structure.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Control Structures</h1>
+<h2>to get contents</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.0, 1.1, 1.2)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">to</code> <code class="keyword">get</code> <code class="keyword">contents</code> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">statementList</em> <br/> <code class="keyword">end</code> <code class="keyword">get</code></p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>to get contents</code> handler defines the behavior of a user-defined object when its contents are accessed or it is converted to a string. When a script requests the contents of a user-defined object, or converts the object to a string, the statements in the <code>to get contents</code> handler are executed, and the return value of the handler becomes the resulting string. </p>
+<p class="block paragraph indent0"> If no <code>to get contents</code> handler is defined for a user-defined object type, objects of that type cannot be accessed as containers, and converting an object of that type to a string results in a descriptor for that object. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> This structure is only valid inside an <code><a href="../cs/object_type.html">object type</a></code> structure. </p>
+<h3>Compatibility</h3>
+<p class="block paragraph indent0"> In OpenXION 1.3 or later, due to a more correct understanding of how containers work, user-defined objects can no longer be containers, and this structure is no longer supported. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cs/object_type.html">object type</a></code>, <code><a href="../cm/get.html">get</a></code></p>
+</body>
+</html>

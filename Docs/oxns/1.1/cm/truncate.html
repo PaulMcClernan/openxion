@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>OpenXION Standard Module 1.1 Commands - truncate</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Standard Module, OpenXION Standard Module 1.1, command, commands, truncate">
+<meta name="description" content="This page describes the truncate command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>truncate</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">truncate</code> <em class="metavariable">object</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">at</code> <em class="metavariable">offset</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Object</em> yields an object with an appropriate I/O manager. <em class="metavariable">Offset</em> yields an <code><a href="../dt/integer.html">integer</a></code>. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>truncate</code> command truncates the specified object, which must be opened already with the <code><a href="../cm/open.html">open</a></code> command. In other words, any data after the specified offset is deleted. If no offset is specified, the object will be truncated where the last <code><a href="../cm/read.html">read</a></code> or <code><a href="../cm/write.html">write</a></code> left off. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> If you <code><a href="../cm/open.html">open</a></code> a file that already exists and <code><a href="../cm/write.html">write</a></code> some data to it, the file may still contain old data that did not get overwritten. The <code>truncate</code> command allows you to remove the contents of a file before writing to it. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cm/open.html">open</a></code>, <code><a href="../cm/read.html">read</a></code>, <code><a href="../cm/write.html">write</a></code>, <code><a href="../cm/close.html">close</a></code>, <code><a href="../mg/file.html">file</a></code>, <code><a href="../mt/text.html">text</a></code>, <code><a href="../mt/binary.html">binary</a></code></p>
+</body>
+</html>

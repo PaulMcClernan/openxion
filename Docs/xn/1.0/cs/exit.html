@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>XION Scripting Language Standard 1.0 Control Structures - exit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, XION Scripting Language Standard, XION Scripting Language Standard 1.0, control structure, control structures, exit">
+<meta name="description" content="This page describes the exit control structure.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Control Structures</h1>
+<h2>exit</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">exit</code> <span class="choice"><span class="metasymbol">(</span><code class="keyword">repeat</code><span class="metasymbol">|</span><code class="keyword">if</code><span class="metasymbol">|</span><code class="keyword">switch</code><span class="metasymbol">|</span><code class="keyword">tell</code><span class="metasymbol">|</span><code class="keyword">try</code><span class="metasymbol">)</span></span></p>
+<p class="block syntax indent0"><code class="keyword">exit</code> <em class="metavariable">handlerName</em></p>
+<p class="block syntax indent0"><code class="keyword">exit</code> <code class="keyword">to</code> <em class="metavariable">object</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <code class="keyword">error</code> <em class="metavariable">errorMessage</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">HandlerName</em> is the name of the handler containing the <code>exit</code> statement. <em class="metavariable">Object</em> yields the <code><a href="../dt/interpreter.html">interpreter</a></code>. <em class="metavariable">ErrorMessage</em> yields any <code><a href="../dt/string.html">string</a></code>. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>exit</code> statement sends control to the end of the specified structure, ending execution of the control structure. Any statements not yet executed in the specified control structure are ignored, and execution continues after the <code><a href="../cs/end.html">end</a></code> of the control structure. The <code>exit</code> <em class="metavariable">handlerName</em> form ends execution of an <code><a href="../cs/on.html">on</a></code> or <code><a href="../cs/function.html">function</a></code> structure. </p>
+<p class="block paragraph indent0"> The <code>exit</code> <code class="keyword">to</code> <em class="metavariable">object</em> form causes the currently executing script to stop executing. No more statements are executed after an <code>exit</code> <code class="keyword">to</code> <em class="metavariable">object</em>, ever. The <code class="keyword">with error</code> parameter allows extra information to be passed back to whatever initiated the execution of the script. OpenXION currently ignores this parameter. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> If an <code>exit</code> statement is used outside its corresponding structure, a script error is triggered. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cs/on.html">on</a></code>, <code><a href="../cs/function.html">function</a></code>, <code><a href="../cs/repeat.html">repeat</a></code>, <code><a href="../cs/if.html">if</a></code>, <code><a href="../cs/switch.html">switch</a></code>, <code><a href="../cs/tell.html">tell</a></code>, <code><a href="../cs/try.html">try</a></code>, <code><a href="../cs/end.html">end</a></code>, <code><a href="../cs/pass.html">pass</a></code></p>
+</body>
+</html>

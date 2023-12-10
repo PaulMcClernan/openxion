@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>OpenXION 1.3 Control Structures - object type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.3, control structure, control structures, object type">
+<meta name="description" content="This page describes the object type control structure.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Control Structures</h1>
+<h2>object type</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">object</code> <code class="keyword">type</code> <em class="metavariable">typeNames</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">extends</code> <em class="metavariable">parentTypeName</em><span class="metasymbol">]</span></span> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">handlerList</em> <br/> <code class="keyword">end</code> <em class="metavariable">firstTypeName</em></p>
+<p class="block paragraph indent0"> <em class="metavariable">TypeNames</em> is a series of data type names, in which every name except the first is prefixed with the keyword <code><a href="../cs/aka.html">aka</a></code> for a singular synonym or the keyword <code><a href="../cs/pl.html">pl</a></code> for a plural name or synonym. Names can be more than one word long: </p>
+<pre class="block script indent0">
+object type fraction aka rational number pl fractions pl rational numbers
+</pre>
+<p class="block paragraph indent0"> <em class="metavariable">ParentTypeName</em> is the name of a data type to inherit handlers and properties from. <em class="metavariable">HandlerList</em> is a series of <code><a href="../cs/on.html">on</a></code>, <code><a href="../cs/function.html">function</a></code>, <code><a href="../cs/to_create.html">to create</a></code>, <code><a href="../cs/to_delete.html">to delete</a></code>, <code><a href="../cs/to_get.html">to get</a></code>, and/or <code><a href="../cs/to_set.html">to set</a></code> structures. <em class="metavariable">FirstTypeName</em> must be the first name that appears in <em class="metavariable">typeNames</em>. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>object type</code> structure creates a new user-defined object type. The behavior of the created object type is defined by the handlers in <em class="metavariable">handlerList</em>. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> Attempting to create a new user-defined object type with the name of an existing data type (including object types previously defined with <code>object type</code>) has no effect. No script error is triggered, and the data type maintains its previously defined behavior. This may change in a future version of OpenXION. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cs/on.html">on</a></code>, <code><a href="../cs/function.html">function</a></code>, <code><a href="../cs/to_create.html">to create</a></code>, <code><a href="../cs/to_delete.html">to delete</a></code>, <code><a href="../cs/to_get.html">to get</a></code>, <code><a href="../cs/to_set.html">to set</a></code></p>
+</body>
+</html>

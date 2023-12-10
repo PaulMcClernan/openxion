@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>OpenXION Extended Module Commands - sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Extended Module, command, commands, sql">
+<meta name="description" content="This page describes the sql command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>sql</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.2, 1.3, 1.4)</li>
+<li>OpenXION Extended Module (1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">sql</code> <code class="keyword">connect</code> <code class="keyword">to</code> <em class="metavariable">url</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <code class="keyword">driver</code> <em class="metavariable">driver</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <code class="keyword">username</code> <em class="metavariable">username</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <code class="keyword">password</code> <em class="metavariable">password</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">sql</code> <code class="keyword">disconnect</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">from</code> <em class="metavariable">url</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">sql</code> <code class="keyword">prepare</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">statement</code><span class="metasymbol">]</span></span> <em class="metavariable">query</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">using</code> <code class="keyword">connection</code> <em class="metavariable">url</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">sql</code> <code class="keyword">prepare</code> <code class="keyword">set</code> <em class="metavariable">parameter</em> <code class="keyword">to</code> <em class="metavariable">value</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">using</code> <code class="keyword">connection</code> <em class="metavariable">url</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">sql</code> <code class="keyword">prepare</code> <code class="keyword">execute</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">using</code> <code class="keyword">connection</code> <em class="metavariable">url</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">sql</code> <code class="keyword">execute</code> <code class="keyword">prepared</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">using</code> <code class="keyword">connection</code> <em class="metavariable">url</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">sql</code> <code class="keyword">execute</code> <em class="metavariable">query</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">using</code> <code class="keyword">connection</code> <em class="metavariable">url</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">URL</em> yields the database&#39;s URL as a <code>string</code>. <em class="metavariable">Driver</em> yields the JDBC driver&#39;s class name as a <code>string</code>. <em class="metavariable">Username</em> and <em class="metavariable">password</em> yield the login name and password used to connect to the database as <code>string</code>s. <em class="metavariable">Query</em> yields a SQL query as a <code>string</code>. <em class="metavariable">Parameter</em> yields the index into the prepared statement&#39;s parameters, starting from 1, as an <code>integer</code>. <em class="metavariable">Value</em> yields the parameter&#39;s value as a <code>string</code>. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+sql connect to "mysql://localhost/studentdb" with driver "com.mysql.jdbc.Driver" with username "admin" with password "woot"
+</pre>
+<pre class="block script indent0">
+sql execute "select * from students" using connection "mysql://localhost/studentdb"
+</pre>
+<pre class="block script indent0">
+sql prepare "update students set name=? where id=?" using connection "mysql://localhost/studentdb"
+</pre>
+<pre class="block script indent0">
+sql prepare set 1 to "Little Bobby Tables"
+</pre>
+<pre class="block script indent0">
+sql prepare set 2 to 16777216
+</pre>
+<pre class="block script indent0">
+sql execute prepared
+</pre>
+<pre class="block script indent0">
+sql disconnect from "mysql://localhost/studentdb"
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>sql</code> command connects to, disconnects from, and submits queries to a database. </p>
+<p class="block paragraph indent0"> The <code>sql connect</code> form opens a connection to a database. If a connection has already been opened, the <em class="metavariable">driver</em> cannot be found or loaded, the database <em class="metavariable">url</em> is invalid, or the specified <em class="metavariable">username</em> and <em class="metavariable">password</em> are invalid, a script error is triggered. </p>
+<p class="block paragraph indent0"> The <code>sql disconnect</code> form closes an open connection to a database. If no <em class="metavariable">url</em> is specified, the last successfully-used <em class="metavariable">url</em> is used. If there is no open connection to the database, a script error is triggered. </p>
+<p class="block paragraph indent0"> The <code>sql prepare statement</code> form creates a prepared statement for the specified database. Parameters in the prepared statement are indicated by question marks in the query string. If no <em class="metavariable">url</em> is specified, the last successfully-used <em class="metavariable">url</em> is used. If there is no open connection to the database, a script error is triggered. </p>
+<p class="block paragraph indent0"> The <code>sql prepare set</code> form sets the value of a parameter in the last prepared statement created for the specified database. The first parameter in the prepared statement is parameter 1. If no <em class="metavariable">url</em> is specified, the last successfully-used <em class="metavariable">url</em> is used. If there is no open connection to the database, no prepared statement has been created for the specified database, or the specified parameter index is invalid, a script error is triggered. </p>
+<p class="block paragraph indent0"> The <code>sql prepare execute</code> and <code>sql execute prepared</code> forms execute the prepared statement. The number of rows affected or returned by the query is put into the <code>result</code>. If any rows are returned, they are put into <code>it</code>. Rows are delimited by the <code>rowDelimiter</code> and columns are delimited by the <code>columnDelimiter</code>. If no <em class="metavariable">url</em> is specified, the last successfully-used <em class="metavariable">url</em> is used. If there is no open connection to the database, the query contains a syntax error, or the query cannot be executed successfully, a script error is triggered. </p>
+<p class="block paragraph indent0"> The <code>sql execute</code> form executes a query immediately, without requiring the creation of a prepared statement. The number of rows affected or returned by the query is put into the <code>result</code>. If any rows are returned, they are put into <code>it</code>. Rows are delimited by the <code>rowDelimiter</code> and columns are delimited by the <code>columnDelimiter</code>. If no <em class="metavariable">url</em> is specified, the last successfully-used <em class="metavariable">url</em> is used. If there is no open connection to the database, the query contains a syntax error, or the query cannot be executed successfully, a script error is triggered. </p>
+<h3>Scripts</h3>
+<p class="block paragraph indent0"> The following scripts demonstrate two possible ways to list the contents of a table: </p>
+<pre class="block script indent0">
+sql execute "select * from students"
+repeat foreach x in the rows of it
+  put replaceall(x, the columndelimiter, tab)
+end repeat
+</pre>
+<pre class="block script indent0">
+set the rowDelimiter to newline
+set the columnDelimiter to tab
+sql execute "select * from students"
+put it
+</pre>
+<h3>Notes</h3>
+<p class="block paragraph indent0"> It is also possible to execute a query without quotes by leaving out the <code class="keyword">execute</code> keyword, e.g.: </p>
+<pre class="block script indent0">
+sql select * from students where firstname = "Steve"
+</pre>
+<p class="block paragraph indent0"> However, this is prone to error and is not recommended. (If you&#39;re curious, among the reasons are: SQL and XION use different lexicographical rules, so it&#39;s possible for the query to confuse OpenXION or the database or both; it is impossible to use any XION expressions in such a statement, so you are limited to static queries; and this feature may change in future versions of OpenXION.) </p>
+</body>
+</html>

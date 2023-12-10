@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>HyperTalk 2.2 Commands - set</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, HyperTalk, HyperTalk 2.2, command, commands, set">
+<meta name="description" content="This page describes the set command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>set</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">set</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <em class="metavariable">propertyName</em> <span class="optional"><span class="metasymbol">[</span><span class="choice"><span class="metasymbol">(</span><code class="keyword">of</code><span class="metasymbol">|</span><code class="keyword">in</code><span class="metasymbol">)</span></span> <em class="metavariable">object</em><span class="metasymbol">]</span></span> <code class="keyword">to</code> <em class="metavariable">propertyValue</em></p>
+<p class="block paragraph indent0"> <em class="metavariable">PropertyName</em> is the name of a property. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+set the name of file "Untitled" to "MyFile"
+</pre>
+<pre class="block script indent0">
+set itemDelimiter to ":"
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>set</code> command changes the specified property. If the object to which the property belongs is not specified, the <code>interpreter</code> is assumed. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> Some properties cannot be changed with the <code>set</code> command. These exceptions are noted in the documentation for the properties themselves. </p>
+</body>
+</html>

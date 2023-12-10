@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>HyperTalk Commands - ask</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, HyperTalk, command, commands, ask">
+<meta name="description" content="This page describes the ask command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>ask</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">ask</code> <em class="metavariable">question</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <em class="metavariable">defaultAnswer</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">at</code> <em class="metavariable">point</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">ask</code> <code class="keyword">password</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">clear</code><span class="metasymbol">]</span></span> <em class="metavariable">question</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <em class="metavariable">defaultAnswer</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">at</code> <em class="metavariable">point</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">ask</code> <code class="keyword">file</code> <em class="metavariable">promptText</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <em class="metavariable">fileName</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">at</code> <em class="metavariable">point</em><span class="metasymbol">]</span></span></p>
+<p class="block syntax indent0"><code class="keyword">ask</code> <span class="choice"><span class="metasymbol">(</span><code class="keyword">folder</code><span class="metasymbol">|</span><code class="keyword">directory</code><span class="metasymbol">)</span></span> <em class="metavariable">promptText</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">with</code> <em class="metavariable">fileName</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">at</code> <em class="metavariable">point</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Question</em>, <em class="metavariable">defaultAnswer</em>, <em class="metavariable">promptText</em>, and <em class="metavariable">fileName</em> yield <code>string</code>s. <em class="metavariable">Point</em> yields a <code><a href="../dt/point.html">point</a></code>. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+ask "Who needs this kind of grief?" with "Not me."
+</pre>
+<pre class="block script indent0">
+ask password "Please enter your password:"
+</pre>
+<pre class="block script indent0">
+ask file "Save this file as:" with "Untitled-1"
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>ask</code> command displays a prompt to the user and allows the user to type a response. The optional <em class="metavariable">defaultAnswer</em> parameter specifies a response that initially appears. The prompt appears with &quot;OK&quot; and &quot;Cancel&quot; choices as well. The script waits until a response is typed and one of the choices is selected. If the &quot;OK&quot; choice is selected, the typed text is placed in the local variable <code>it</code> and the <code><a href="../fn/result.html">result</a></code> is set to <code>&quot;OK&quot;</code>. If the &quot;Cancel&quot; choice is selected, <code><a href="../cn/empty.html">empty</a></code> is placed in <code>it</code> and the <code><a href="../fn/result.html">result</a></code> is set to <code>&quot;Cancel&quot;</code>. </p>
+<p class="block paragraph indent0"> The <code>ask password</code> command hides the response from the user as it is being typed and hashes the response using the Atkinson hash (see the <code>hash</code> function). The hashed response can be stored somewhere to be compared to a later response to <code>ask password</code> if, for example, you want the user to be able to protect data they enter. </p>
+<p class="block paragraph indent0"> The <code>ask password clear</code> command hides the response from the user as it is being typed, but does not hash the response. </p>
+<p class="block paragraph indent0"> The <code>ask file</code> command displays a prompt to the user asking for the location and name of a new file. The optional <em class="metavariable">fileName</em> parameter specifies a file name that initially appears. The script waits until a file name is entered. The file path is placed in the local variable <code>it</code> and the <code><a href="../fn/result.html">result</a></code> is set to <code>&quot;OK&quot;</code>. If the prompt is dismissed without entering a file name, <code><a href="../cn/empty.html">empty</a></code> is placed in <code>it</code> and the <code><a href="../fn/result.html">result</a></code> is set to <code>&quot;Cancel&quot;</code>. </p>
+<p class="block paragraph indent0"> The <code>ask folder</code> or <code>ask directory</code> command displays a prompt to the user asking for the location and name of a new folder or directory. The optional <em class="metavariable">fileName</em> parameter specifies a folder name that initially appears. The script waits until a folder name is entered. The directory path is placed in the local variable <code>it</code> and the <code><a href="../fn/result.html">result</a></code> is set to <code>&quot;OK&quot;</code>. If the prompt is dismissed without entering a folder name, <code><a href="../cn/empty.html">empty</a></code> is placed in <code>it</code> and the <code><a href="../fn/result.html">result</a></code> is set to <code>&quot;Cancel&quot;</code>. </p>
+<p class="block paragraph indent0"> The exact presentation of the prompts is left to the implementation. OpenXION presents a stylized text-based prompt, or a plain text-based prompt if the <code>-p</code> option is given. A GUI-based system, like HyperCard, will present an appropriate dialog box. The <code class="keyword">at</code> parameter gives a preferred location for this dialog box. </p>
+<h3>Notes</h3>
+<p class="block paragraph indent0"> The <code>ask password</code> command is not recommended for cryptographic purposes because the Atkinson hash algorithm is easily brute-forced. Instead, use the <code>ask password clear</code> command, then hash the cleartext password using a more secure <code>hash</code> algorithm. </p>
+<p class="block paragraph indent0"> The <code>ask file</code>, <code>ask folder</code>, and <code>ask directory</code> commands do not actually create the selected file or folder. The script must create the file or folder itself. </p>
+<p class="block paragraph indent0"> There is no way for a script to respond to a prompt by itself, so do not use <code>ask</code> in a script intended to run unattended. </p>
+<h3>Compatibility</h3>
+<p class="block paragraph indent0"> HyperTalk does not support the <code>ask folder</code> or <code>ask directory</code> forms, or the <code>at</code> parameter. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cm/answer.html">answer</a></code></p>
+</body>
+</html>

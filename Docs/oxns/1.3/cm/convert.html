@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>OpenXION Standard Module 1.3 Commands - convert</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Standard Module, OpenXION Standard Module 1.3, command, commands, convert">
+<meta name="description" content="This page describes the convert command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>convert</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">convert</code> <em class="metavariable">container</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">from</code> <em class="metavariable">format</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">and</code> <em class="metavariable">format</em><span class="metasymbol">]</span></span><span class="metasymbol">]</span></span> <code class="keyword">to</code> <em class="metavariable">format</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">and</code> <em class="metavariable">format</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Format</em> is one of the following: <code class="keyword">date</code>, <code class="keyword">short date</code>, <code class="keyword">abbreviated date</code>, <code class="keyword">long date</code>, <code class="keyword">English date</code>, <code class="keyword">short time</code>, <code class="keyword">abbreviated time</code>, <code class="keyword">long time</code>, <code class="keyword">English time</code>, <code class="keyword">seconds</code>, or <code class="keyword">dateItems</code>. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+convert line 1 of steve from date to dateItems
+</pre>
+<pre class="block script indent0">
+convert bill from date and time to dateItems
+</pre>
+<pre class="block script indent0">
+convert andy to seconds
+</pre>
+<pre class="block script indent0">
+convert first line of steve to long date and short time
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>convert</code> command gets a date or time and converts it from a particular format, if specified, to a particular format. This command works with either the local date format or the U.S. date format. </p>
+<p class="block paragraph indent0"> If the first parameter to the <code>convert</code> command is a container, the converted date or time is placed in that container. If the first parameter is not a container, the converted date or time is placed in the local variable <code>it</code>. </p>
+<p class="block paragraph indent0"> A script that needs to work with dates and times should convert them to the <code class="keyword">seconds</code> or <code class="keyword">dateItems</code> format before working on them. This avoids problems that may occur when running the script in a different locale. The <code class="keyword">seconds</code> and <code class="keyword">dateItems</code> formats are the only ones guaranteed to be recognized in any locale. </p>
+<h3>Script</h3>
+<p class="block paragraph indent0"> The following example prints tomorrow&#39;s date in the short format regardless of the current locale: </p>
+<pre class="block script indent0">
+on printTomorrow
+  get the date
+  convert it to dateItems
+  add 1 to item 3 of it
+  convert it to short date
+  put it
+end printTomorrow
+</pre>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../dt/date.html">date</a></code>, <code><a href="../fn/date.html">date</a></code>, <code><a href="../fn/time.html">time</a></code>, <code><a href="../fn/seconds.html">seconds</a></code>, <code><a href="../fn/dateitems.html">dateItems</a></code></p>
+</body>
+</html>

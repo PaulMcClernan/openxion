@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>OpenXION Standard Module 1.3 Functions - bc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Standard Module, OpenXION Standard Module 1.3, function, functions, bc">
+<meta name="description" content="This page describes the bc function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>bc</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">bc</code> <code class="keyword">of</code> <code class="keyword">(</code> <em class="metavariable">expression</em> <code class="keyword">,</code> <em class="metavariable">sourceBase</em> <code class="keyword">,</code> <em class="metavariable">destinationBase</em> <code class="keyword">)</code></p>
+<p class="block syntax indent0"><code class="keyword">bc</code> <code class="keyword">(</code> <em class="metavariable">expression</em> <code class="keyword">,</code> <em class="metavariable">sourceBase</em> <code class="keyword">,</code> <em class="metavariable">destinationBase</em> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Expression</em> yields a <code><a href="../dt/string.html">string</a></code>. <em class="metavariable">SourceBase</em> and <em class="metavariable">destinationBase</em> yield positive <code><a href="../dt/integer.html">integer</a></code>s between 2 and 36, inclusive. </p>
+<h3>Example</h3>
+<pre class="block script indent0">
+put bc("09F91102", 16, 10) into myNumber
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>bc</code> function converts a real or complex number in any base, or radix, to the same number in another base. For example, <code>bc(&quot;FF&quot;,16,10)</code> gives <code>&quot;255&quot;</code>, and <code>bc(&quot;255&quot;,10,16)</code> gives <code>&quot;FF&quot;</code>. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> If the given <em class="metavariable">sourceBase</em> or <em class="metavariable">destinationBase</em> is less than 2 or greater than 36, a script error is triggered. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../fn/bin.html">bin</a></code>, <code><a href="../fn/hex.html">hex</a></code>, <code><a href="../fn/oct.html">oct</a></code></p>
+</body>
+</html>

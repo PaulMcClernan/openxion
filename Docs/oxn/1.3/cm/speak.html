@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>OpenXION 1.3 Commands - speak</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.3, command, commands, speak">
+<meta name="description" content="This page describes the speak command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>speak</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.2, 1.3, 1.4)</li>
+<li>OpenXION Audio Module (1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">speak</code> <em class="metavariable">phrase</em> <span class="optional choice"><span class="metasymbol">[</span><code class="keyword">with</code> <em class="metavariable">gender</em> <code class="keyword">voice</code><span class="metasymbol">|</span><code class="keyword">with</code> <code class="keyword">voice</code> <em class="metavariable">voice</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Phrase</em> and <em class="metavariable">voice</em> yield <code><a href="../dt/string.html">string</a></code>s. <em class="metavariable">Gender</em> is <code class="keyword">male</code>, <code class="keyword">female</code>, or <em class="metavariable">neuter</em>. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>speak</code> command speaks the specified <em class="metavariable">phrase</em> using a text-to-speech synthesizer. If the <em class="metavariable">voice</em> is specified, the <em class="metavariable">phrase</em> will be read using the specified <em class="metavariable">voice</em>. Otherwise, the default voice is used. </p>
+<h3>Notes</h3>
+<p class="block paragraph indent0"> The <code>speak</code> command is asynchronous: it will return immediately while the speech keeps playing in the background. If there is already text being spoken, the next text to be spoken will be added to a queue. The <code>stop speech</code> command will stop all current and pending speech. </p>
+<p class="block paragraph indent0"> HyperTalk and OpenXION running under Mac OS use the speech synthesizer built in to Mac OS. OpenXION running under other platforms will use JSAPI (Java Speech API), if available. If JSAPI is not available, <code>speak</code> will do nothing but set the <code><a href="../fn/result.html">result</a></code> to an error message. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cm/stop.html">stop</a></code>, <code><a href="../fn/speech.html">speech</a></code>, <code><a href="../fn/voice.html">voice</a></code>, <code><a href="../fn/voices.html">voices</a></code></p>
+</body>
+</html>

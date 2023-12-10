@@ -1,0 +1,241 @@
+<html>
+<head>
+<title>OpenXION Base 1.3 Operator Precedence Table</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Base, OpenXION Base 1.3, operator, operators, operator precedence, operator precedence chart, operator precedence table">
+<meta name="description" content="This page shows the order of precedence of operators in OpenXION Base.">
+<link rel="stylesheet" type="text/css" href="xiondoc.css">
+</head>
+<body>
+<h1>OpenXION Base Operator Precedence Table</h1>
+<p class="block paragraph indent0">The table below shows the order of precedence of operators in OpenXION Base. In a complex expression containing more than one operator, the operations indicated by operators with lower-numbered precedence will be performed before those with higher-numbered precedence. Operators of equal precedence are evaluated left-to-right, except for exponentiation, which goes right-to-left. If you use parentheses, the innermost parenthetical expression is evaluated first.</p>
+<table class="block table indent0 border0 linedrowgroups">
+<thead>
+<tr>
+<th>Order</th>
+<th>Operators</th>
+<th>Type of Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1 - Unary &amp; Conditional</td><td><code><a href="op/a_new.html">a new</a></code></td><td>Construction of objects</td></tr>
+<tr><td></td><td><code><a href="op/a_ref_to.html">a ref to</a></code></td><td>Referencing</td></tr>
+<tr><td></td><td><code><a href="op/a_reference_to.html">a reference to</a></code></td><td>Referencing</td></tr>
+<tr><td></td><td><code><a href="op/bitnot.html">bitnot</a></code></td><td>Bitwise negation</td></tr>
+<tr><td></td><td><code><a href="op/if.html">if</a></code></td><td>Conditional expression</td></tr>
+<tr><td></td><td><code><a href="op/new.html">new</a></code></td><td>Construction of objects</td></tr>
+<tr><td></td><td><code><a href="op/not.html">not</a></code></td><td>Negation for boolean values</td></tr>
+<tr><td></td><td><code><a href="op/ref_of.html">ref of</a></code></td><td>Dereferencing</td></tr>
+<tr><td></td><td><code><a href="op/ref_to.html">ref to</a></code></td><td>Referencing</td></tr>
+<tr><td></td><td><code><a href="op/reference_to.html">reference to</a></code></td><td>Referencing</td></tr>
+<tr><td></td><td><code><a href="op/referent_of.html">referent of</a></code></td><td>Dereferencing</td></tr>
+<tr><td></td><td><code><a href="op/the_ref_of.html">the ref of</a></code></td><td>Dereferencing</td></tr>
+<tr><td></td><td><code><a href="op/the_referent_of.html">the referent of</a></code></td><td>Dereferencing</td></tr>
+<tr><td></td><td><code><a href="op/there_is_a.html">there is a</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_is_an.html">there is an</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_is_no.html">there is no</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_is_not_a.html">there is not a</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_is_not_an.html">there is not an</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_isn_t_a.html">there isn&#39;t a</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_isn_t_an.html">there isn&#39;t an</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_s_a.html">there&#39;s a</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_s_an.html">there&#39;s an</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_s_no.html">there&#39;s no</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/$0021.html">!</a></code></td><td>Negation for boolean values</td></tr>
+<tr><td></td><td><code><a href="op/$2212.html">&#8722;</a></code></td><td>Negation for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>2 - Exponentiation</td><td><code><a href="op/$002A$002A.html">**</a></code></td><td>Exponentiation for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$005E.html">^</a></code></td><td>Exponentiation for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>3 - Multiplication</td><td><code><a href="op/div.html">div</a></code></td><td>Division for numbers</td></tr>
+<tr><td></td><td><code><a href="op/mod.html">mod</a></code></td><td>Modulus for numbers</td></tr>
+<tr><td></td><td><code><a href="op/quot.html">quot</a></code></td><td>Division for numbers</td></tr>
+<tr><td></td><td><code><a href="op/rem.html">rem</a></code></td><td>Modulus for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$0025.html">%</a></code></td><td>Modulus for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$002A.html">*</a></code></td><td>Multiplication for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$002F.html">/</a></code></td><td>Division for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$00B7.html">&#183;</a></code></td><td>Multiplication for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$00D7.html">&#215;</a></code></td><td>Multiplication for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$00F7.html">&#247;</a></code></td><td>Division for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>4 - Addition</td><td><code><a href="op/$002B.html">+</a></code></td><td>Addition for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$002D.html">-</a></code></td><td>Subtraction for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>5 - Bit Shift</td><td><code><a href="op/$003C$003C.html">&lt;&lt;</a></code></td><td>Bitwise shift</td></tr>
+<tr><td></td><td><code><a href="op/$003E$003E.html">&gt;&gt;</a></code></td><td>Bitwise shift</td></tr>
+<tr><td></td><td><code><a href="op/$003E$003E$003E.html">&gt;&gt;&gt;</a></code></td><td>Bitwise shift</td></tr>
+</tbody>
+<tbody>
+<tr><td>6 - Bitwise AND</td><td><code><a href="op/bitand.html">bitand</a></code></td><td>Bitwise AND</td></tr>
+</tbody>
+<tbody>
+<tr><td>7 - Bitwise XOR</td><td><code><a href="op/bitxor.html">bitxor</a></code></td><td>Bitwise XOR</td></tr>
+</tbody>
+<tbody>
+<tr><td>8 - Bitwise OR</td><td><code><a href="op/bitor.html">bitor</a></code></td><td>Bitwise OR</td></tr>
+</tbody>
+<tbody>
+<tr><td>9 - String Concatenation</td><td><code><a href="op/$0026.html">&amp;</a></code></td><td>Concatenation for strings</td></tr>
+<tr><td></td><td><code><a href="op/$0026$0026.html">&amp;&amp;</a></code></td><td>Concatenation for strings</td></tr>
+<tr><td></td><td><code><a href="op/$007C$007C.html">||</a></code></td><td>Concatenation for strings</td></tr>
+</tbody>
+<tbody>
+<tr><td>10 - List Concatenation</td><td><code><a href="op/$003A.html">:</a></code></td><td>Construction of lists</td></tr>
+<tr><td></td><td><code><a href="op/$003A$003A.html">::</a></code></td><td>Construction of lists</td></tr>
+<tr><td></td><td><code><a href="op/$0040.html">@</a></code></td><td>Concatenation of lists</td></tr>
+<tr><td></td><td><code><a href="op/$0040$0040.html">@@</a></code></td><td>Concatenation of lists</td></tr>
+</tbody>
+<tbody>
+<tr><td>11 - Relational</td><td><code><a href="op/begins_with.html">begins with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/between.html">between</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/comes_after.html">comes after</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/comes_before.html">comes before</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/contains.html">contains</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/does_not_begin_with.html">does not begin with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/does_not_contain.html">does not contain</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/does_not_end_with.html">does not end with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/does_not_start_with.html">does not start with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/doesn_t_begin_with.html">doesn&#39;t begin with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/doesn_t_contain.html">doesn&#39;t contain</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/doesn_t_end_with.html">doesn&#39;t end with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/doesn_t_start_with.html">doesn&#39;t start with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/ends_with.html">ends with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/ge.html">ge</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/gt.html">gt</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_after.html">is after</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_an_element_in.html">is an element in</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_an_element_of.html">is an element of</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_before.html">is before</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_between.html">is between</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_bigger_than.html">is bigger than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_fewer_than.html">is fewer than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_greater_than.html">is greater than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_in.html">is in</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_less_than.html">is less than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_more_than.html">is more than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_after.html">is not after</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_an_element_in.html">is not an element in</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_not_an_element_of.html">is not an element of</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_not_before.html">is not before</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_between.html">is not between</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_bigger_than.html">is not bigger than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_fewer_than.html">is not fewer than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_greater_than.html">is not greater than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_in.html">is not in</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_less_than.html">is not less than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_more_than.html">is not more than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_of.html">is not of</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_precisely_an_element_in.html">is not precisely an element in</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_not_precisely_an_element_of.html">is not precisely an element of</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_not_smaller_than.html">is not smaller than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_within.html">is not within</a></code></td><td>Boolean test for point within rectangle</td></tr>
+<tr><td></td><td><code><a href="op/is_of.html">is of</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_precisely_an_element_in.html">is precisely an element in</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_precisely_an_element_of.html">is precisely an element of</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/is_smaller_than.html">is smaller than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_within.html">is within</a></code></td><td>Boolean test for point within rectangle</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_after.html">isn&#39;t after</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_an_element_in.html">isn&#39;t an element in</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_an_element_of.html">isn&#39;t an element of</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_before.html">isn&#39;t before</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_between.html">isn&#39;t between</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_bigger_than.html">isn&#39;t bigger than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_fewer_than.html">isn&#39;t fewer than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_greater_than.html">isn&#39;t greater than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_in.html">isn&#39;t in</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_less_than.html">isn&#39;t less than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_more_than.html">isn&#39;t more than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_of.html">isn&#39;t of</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_precisely_an_element_in.html">isn&#39;t precisely an element in</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_precisely_an_element_of.html">isn&#39;t precisely an element of</a></code></td><td>Comparison for lists</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_smaller_than.html">isn&#39;t smaller than</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_within.html">isn&#39;t within</a></code></td><td>Boolean test for point within rectangle</td></tr>
+<tr><td></td><td><code><a href="op/le.html">le</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/lt.html">lt</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/not_between.html">not between</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/starts_with.html">starts with</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/$003C.html">&lt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003C$003D.html">&lt;=</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003D$003C.html">=&lt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003D$003E.html">=&gt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003E.html">&gt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003E$003D.html">&gt;=</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2264.html">&#8804;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2265.html">&#8805;</a></code></td><td>Comparison for numbers or strings</td></tr>
+</tbody>
+<tbody>
+<tr><td>12 - Polymorphic</td><td><code><a href="op/are.html">are</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/are_not.html">are not</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/are_not_precisely.html">are not precisely</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/are_precisely.html">are precisely</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/aren_t.html">aren&#39;t</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/aren_t_precisely.html">aren&#39;t precisely</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/as.html">as</a></code></td><td>Conversion for types</td></tr>
+<tr><td></td><td><code><a href="op/as_a.html">as a</a></code></td><td>Conversion for types</td></tr>
+<tr><td></td><td><code><a href="op/as_an.html">as an</a></code></td><td>Conversion for types</td></tr>
+<tr><td></td><td><code><a href="op/instanceof.html">instanceof</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_a.html">is a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_an.html">is an</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_not_a.html">is not a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_not_an.html">is not an</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_not_precisely_a.html">is not precisely a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_not_precisely_an.html">is not precisely an</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_precisely_a.html">is precisely a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_precisely_an.html">is precisely an</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/isa.html">isa</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_a.html">isn&#39;t a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_an.html">isn&#39;t an</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_precisely_a.html">isn&#39;t precisely a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_precisely_an.html">isn&#39;t precisely an</a></code></td><td>Comparison for types</td></tr>
+</tbody>
+<tbody>
+<tr><td>13 - Equivalence</td><td><code><a href="op/cmp.html">cmp</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/compared_to.html">compared to</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/does_not_equal.html">does not equal</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/doesn_t_equal.html">doesn&#39;t equal</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/eq.html">eq</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/equals.html">equals</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is.html">is</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_equal_to.html">is equal to</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_exactly.html">is exactly</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not.html">is not</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_equal_to.html">is not equal to</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_exactly.html">is not exactly</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t.html">isn&#39;t</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_equal_to.html">isn&#39;t equal to</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/isn_t_exactly.html">isn&#39;t exactly</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/ne.html">ne</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/$0021$003D.html">!=</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$0021$003D$003D.html">!==</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003C$003D$003E.html">&lt;=&gt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003C$003E.html">&lt;&gt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003D.html">=</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003D$003D.html">==</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003D$003D$003D.html">===</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2260.html">&#8800;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2260$2260.html">&#8800;&#8800;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2260$2260$2260.html">&#8800;&#8800;&#8800;</a></code></td><td>Comparison for numbers or strings</td></tr>
+</tbody>
+<tbody>
+<tr><td>14 - Boolean AND</td><td><code><a href="op/and.html">and</a></code></td><td>Logical AND for boolean values</td></tr>
+<tr><td></td><td><code><a href="op/$0026$0026$0026.html">&amp;&amp;&amp;</a></code></td><td>Logical AND for boolean values</td></tr>
+</tbody>
+<tbody>
+<tr><td>15 - Boolean XOR</td><td><code><a href="op/xor.html">xor</a></code></td><td>Logical XOR for boolean values</td></tr>
+<tr><td></td><td><code><a href="op/$005E$005E$005E.html">^^^</a></code></td><td>Logical XOR for boolean values</td></tr>
+</tbody>
+<tbody>
+<tr><td>16 - Boolean OR</td><td><code><a href="op/or.html">or</a></code></td><td>Logical OR for boolean values</td></tr>
+<tr><td></td><td><code><a href="op/$007C$007C$007C.html">|||</a></code></td><td>Logical OR for boolean values</td></tr>
+</tbody>
+<tbody>
+<tr><td>17 - List Construction</td><td><code><a href="op/$002C.html">,</a></code></td><td>Construction of lists</td></tr>
+</tbody>
+</table>
+</body>
+</html>

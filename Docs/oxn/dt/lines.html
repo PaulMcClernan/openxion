@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>OpenXION Data Types - lines</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, data type, data types, lines">
+<meta name="description" content="This page describes the lines data type.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Data Types</h1>
+<h2>lines</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Descriptors</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>index range descriptor: <code>put lines 2 through 7 of steve into bill</code></li>
+<li>ordinal range descriptor: <code>put the third through eighth lines of steve into bill</code></li>
+<li>mass descriptor: <code>put the lines of steve into bill</code></li>
+</ul>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>lines</code> data type is a chunk type of <code><a href="../dt/string.html">string</a></code> that represents a range of lines. This includes empty lines at the beginning or in the middle of the <code><a href="../dt/string.html">string</a></code> but not the last trailing empty line of the <code><a href="../dt/string.html">string</a></code>, if there is one. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> Accessing a <code><a href="../dt/line.html">line</a></code> chunk that is out of range returns <code><a href="../cn/empty.html">empty</a></code>. Modifying a <code><a href="../dt/line.html">line</a></code> chunk that is out of range inserts as many line breaks as necessary to insert text on the appropriate line of the parent <code><a href="../dt/string.html">string</a></code>. </p>
+<h3>Compatibility</h3>
+<p class="block paragraph indent0"> The <code>lines</code> chunk type in HyperTalk always and only uses <code><a href="../cn/return.html">return</a></code> as the line ending. The <code>lines</code> chunk type in XION uses <code><a href="../cn/return.html">return</a></code><code><a href="../op/$0026.html">&amp;</a></code><code><a href="../cn/newline.html">newline</a></code>, <code><a href="../cn/newline.html">newline</a></code>, <code><a href="../cn/return.html">return</a></code>, <code><a href="../cn/linesep.html">linesep</a></code>, and <code><a href="../cn/parasep.html">parasep</a></code> as possible line endings. When inserting additional line breaks, <code>lines</code> uses the current setting of the <code><a href="../pr/lineending.html">lineEnding</a></code> property. </p>
+</body>
+</html>

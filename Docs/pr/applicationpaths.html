@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>XION Properties - applicationPaths</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, property, properties, applicationPaths">
+<meta name="description" content="This page describes the applicationPaths property.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Properties</h1>
+<h2>applicationPaths</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Applies To</h3>
+<p class="block paragraph indent0">Global environment</p>
+<h3>Example</h3>
+<p class="block paragraph indent0"> <code>set <code>applicationPaths</code> to the <code>applicationPaths</code> &amp; newline &amp; &quot;/home/jdoe/bin/&quot;</code> </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>applicationPaths</code> property determines or changes the list of file system paths searched by the <code><a href="../cm/open.html">open</a></code> command and the <code><a href="../fn/apppath.html">appPath</a></code>, <code><a href="../fn/appfile.html">appFile</a></code>, <code><a href="../fn/appordocpath.html">appOrDocPath</a></code>, and <code><a href="../fn/appordocfile.html">appOrDocFile</a></code> functions to locate applications or program files. </p>
+<h3>Notes</h3>
+<p class="block paragraph indent0"> HyperTalk did not have this property but used an <code>Applications</code> global variable for the same purpose. OpenXION avoids using any XION global variables for special purposes. </p>
+<p class="block paragraph indent0"> The default list of paths in OpenXION is, on Mac OS X: </p>
+<pre class="block script indent0">
+/Applications/
+/Applications/Utilities/
+/Applications (Mac OS 9)/
+~/Applications/
+/Developer/Applications/
+/Developer/Applications/Utilities/
+/bin/
+/sbin/
+/usr/bin/
+/usr/sbin/
+/usr/local/bin/
+/usr/local/sbin/
+/usr/shared/bin/
+/usr/shared/sbin/
+/opt/bin/
+/opt/sbin/
+/opt/local/bin/
+/opt/local/sbin/
+/opt/shared/bin/
+/opt/shared/sbin/
+</pre>
+<p class="block paragraph indent0"> On Windows: </p>
+<pre class="block script indent0">
+C:\Program Files\
+C:\Windows\
+C:\Windows\System32\
+</pre>
+<p class="block paragraph indent0"> On all other systems: </p>
+<pre class="block script indent0">
+/bin/
+/sbin/
+/usr/bin/
+/usr/sbin/
+/usr/local/bin/
+/usr/local/sbin/
+/usr/shared/bin/
+/usr/shared/sbin/
+/opt/bin/
+/opt/sbin/
+/opt/local/bin/
+/opt/local/sbin/
+/opt/shared/bin/
+/opt/shared/sbin/
+</pre>
+<p class="block paragraph indent0"> (The <code>~</code> refers to the user&#39;s home directory.) </p>
+<p class="block paragraph indent0"> OpenXION reads the value of this property from a file at startup and writes it back to the file upon exit. This file is located at <code>~/Library/Preferences/com.kreative.openxion.conf</code> (on Mac OS X), <code>~\Application Data\OpenXION\xion.conf</code> (on Windows), or <code>~/.xion.conf</code> (on all other systems). This is a plain text file that can be edited with any text editor. </p>
+<p class="block paragraph indent0"> The <code>applicationPaths</code> property is specific to OpenXION; it is not part of the XION Scripting Language Standard. </p>
+<h3>Security</h3>
+<p class="block paragraph indent0"> To change the value of this property, OpenXION&#39;s security settings must allow the <code>SEARCH_PATHS</code> security key. If the required security key is denied, a script error will be triggered. </p>
+<h3>Synonym</h3>
+<p class="block paragraph indent0"><code><a href="../pr/programpaths.html">programPaths</a></code></p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cm/open.html">open</a></code>, <code><a href="../fn/apppath.html">appPath</a></code>, <code><a href="../fn/appfile.html">appFile</a></code>, <code><a href="../fn/appordocpath.html">appOrDocPath</a></code>, <code><a href="../fn/appordocfile.html">appOrDocFile</a></code></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>OpenXION Base 1.2 Control Structures - on</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Base, OpenXION Base 1.2, control structure, control structures, on">
+<meta name="description" content="This page describes the on control structure.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Control Structures</h1>
+<h2>on</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">on</code> <em class="metavariable">messageName</em> <em class="metavariable">parameterList</em> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">statementList</em> <br/> <code class="keyword">end</code> <em class="metavariable">messageName</em></p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>on</code> keyword identifies a message handler. Message handlers are written to define your own commands or modify or redefine what happens in response to a built-in command. </p>
+<p class="block paragraph indent0"> When a message called <em class="metavariable">messageName</em> is sent to an object, the XION interpreter checks that object&#39;s script to see if it has a corresponding message handler also called <em class="metavariable">messageName</em>. If it does, the object responds according to that handler, and the message is sent no further (unless the script has a <code><a href="../cs/pass.html">pass</a></code> statement). If the object has no handler named <em class="metavariable">messageName</em>, the interpreter passes the message to the next object in the hierarchy. </p>
+<p class="block paragraph indent0"> The statements in a handler execute until an <code><a href="../cs/end.html">end</a></code>, <code><a href="../cs/exit.html">exit</a></code>, <code><a href="../cs/pass.html">pass</a></code>, <code><a href="../cs/return.html">return</a></code>, or <code><a href="../cs/throw.html">throw</a></code> keyword is reached. The return value of a message handler, if any, is accessible through the built-in function <code>result</code>. </p>
+<p class="block paragraph indent0"> The optional <em class="metavariable">parameterList</em> allows the message handler to receive some values sent along with the message. This list is a series of local variable names separated by commas, each optionally followed by a data type and/or default value: </p>
+<p class="block syntax indent0"><em class="metavariable">variableName</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">as</code> <em class="metavariable">dataType</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">is</code> <em class="metavariable">defaultValue</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> When the handler executes, each value is put into the parameter variable that appears in the corresponding position. If no value is specified for a parameter variable, the default value for that parameter variable (or <code>empty</code> if no default value is specified) is put into that parameter variable. </p>
+<p class="block paragraph indent0"> The default data type of a parameter if none is specified is <code>string</code>. Other data types, particularly <code>variant</code>, may behave in a manner incompatible with HyperTalk, but that may be desirable. </p>
+<h3>Compatibility</h3>
+<p class="block paragraph indent0"> HyperTalk does not support <code class="keyword">as</code> or <code class="keyword">is</code> in the parameter list. All parameter variables in HyperTalk are implicitly declared as <code>string</code> with a default value of <code>empty</code>. </p>
+<p class="block paragraph indent0"> In HyperTalk, handlers may not be nested; that is, a handler may not appear in the middle of another handler. In OpenXION, handlers can be nested. The nested handlers will only be accessible from within the handler in which they appear. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cs/function.html">function</a></code></p>
+</body>
+</html>

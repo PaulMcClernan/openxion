@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>XION Functions - ygnDecode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, function, functions, ygnDecode">
+<meta name="description" content="This page describes the ygnDecode function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>ygnDecode</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.3, 1.4)</li>
+<li>OpenXION Extended Module (1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">the</code> <code class="keyword">ygnDecode</code> <code class="keyword">of</code> <em class="metavariable">text</em></p>
+<p class="block syntax indent0"><code class="keyword">the</code> <code class="keyword">ygnDecode</code> <code class="keyword">of</code> <code class="keyword">(</code> <em class="metavariable">text</em> <code class="keyword">,</code> <em class="metavariable">collapseBackslashes</em> <code class="keyword">)</code></p>
+<p class="block syntax indent0"><code class="keyword">ygnDecode</code> <code class="keyword">(</code> <em class="metavariable">text</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <em class="metavariable">collapseBackslashes</em><span class="metasymbol">]</span></span> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Text</em> yields a <code><a href="../dt/string.html">string</a></code>. <em class="metavariable">CollapseBackslashes</em> yields a <code><a href="../dt/boolean.html">boolean</a></code>. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>ygnDecode</code> function decodes sequences of the forms <code>=X<em class="metavariable">hex</em>=</code> and <code>=<em class="metavariable">L</em>=</code> in the specified string and returns the decoded string. </p>
+<p class="block paragraph indent0"> A sequence of the form <code>=X<em class="metavariable">hex</em>=</code>, where <em class="metavariable">hex</em> is a hexadecimal integer using capital letters representing a Unicode code point, is decoded as the character at that code point. </p>
+<p class="block paragraph indent0"> A sequence of the form <code>=<em class="metavariable">L</em>=</code>, where <em class="metavariable">L</em> is a single capital letter, is decoded as one of the following symbols: </p>
+<table class="block table indent0 border0">
+<tr>
+<td><code>=A=</code></td>
+<td>apostrophe</td>
+</tr>
+<tr>
+<td><code>=B=</code></td>
+<td>backslash</td>
+</tr>
+<tr>
+<td><code>=C=</code></td>
+<td>colon</td>
+</tr>
+<tr>
+<td><code>=D=</code></td>
+<td>dollar sign</td>
+</tr>
+<tr>
+<td><code>=E=</code></td>
+<td>equals sign</td>
+</tr>
+<tr>
+<td><code>=F=</code></td>
+<td>slash (mnemonic: &quot;fraction&quot;)</td>
+</tr>
+<tr>
+<td><code>=G=</code></td>
+<td>greater-than</td>
+</tr>
+<tr>
+<td><code>=H=</code></td>
+<td>question mark (mnemonic: &quot;help&quot;)</td>
+</tr>
+<tr>
+<td><code>=I=</code></td>
+<td>opening bracket</td>
+</tr>
+<tr>
+<td><code>=J=</code></td>
+<td>closing bracket</td>
+</tr>
+<tr>
+<td><code>=K=</code></td>
+<td>semicolon</td>
+</tr>
+<tr>
+<td><code>=L=</code></td>
+<td>less-than</td>
+</tr>
+<tr>
+<td><code>=M=</code></td>
+<td>ampersand</td>
+</tr>
+<tr>
+<td><code>=N=</code></td>
+<td>plus sign</td>
+</tr>
+<tr>
+<td><code>=O=</code></td>
+<td>pound sign (mnemonic: &quot;octothorpe&quot;)</td>
+</tr>
+<tr>
+<td><code>=P=</code></td>
+<td>percent</td>
+</tr>
+<tr>
+<td><code>=Q=</code></td>
+<td>quotation mark</td>
+</tr>
+<tr>
+<td><code>=R=</code></td>
+<td>caret (mnemonic: &quot;raise&quot;)</td>
+</tr>
+<tr>
+<td><code>=S=</code></td>
+<td>asterisk (mnemonic: &quot;star&quot;)</td>
+</tr>
+<tr>
+<td><code>=T=</code></td>
+<td>tilde</td>
+</tr>
+<tr>
+<td><code>=U=</code></td>
+<td>underscore</td>
+</tr>
+<tr>
+<td><code>=V=</code></td>
+<td>vertical bar</td>
+</tr>
+<tr>
+<td><code>=W=</code></td>
+<td>grave accent (mnemonic: &quot;which,&quot; as in <code>`which gcc` hello.c</code>)</td>
+</tr>
+<tr>
+<td><code>=X=</code></td>
+<td>exclamation point</td>
+</tr>
+<tr>
+<td><code>=Y=</code></td>
+<td>opening brace</td>
+</tr>
+<tr>
+<td><code>=Z=</code></td>
+<td>closing brace</td>
+</tr>
+</table>
+<p class="block paragraph indent0"> If <em class="metavariable">collapseBackslashes</em> is <code><a href="../cn/true.html">true</a></code>, any <code>=B=</code> sequences immediately preceding a <code>=B=</code>, <code>=A=</code>, or <code>=Q=</code> sequence are ignored. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../fn/ygnencode.html">ygnEncode</a></code>, <code><a href="../fn/urlencode.html">urlEncode</a></code>, <code><a href="../fn/urldecode.html">urlDecode</a></code>, <code><a href="../fn/htmlencode.html">htmlEncode</a></code>, <code><a href="../fn/htmldecode.html">htmlDecode</a></code></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>XION Commands - tone</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, command, commands, tone">
+<meta name="description" content="This page describes the tone command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>tone</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.2, 1.3, 1.4)</li>
+<li>OpenXION Audio Module (1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">tone</code> <em class="metavariable">frequency</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">for</code> <em class="metavariable">duration</em> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">unit</em><span class="metasymbol">]</span></span><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Frequency</em> and <em class="metavariable">duration</em> yield <code><a href="../dt/number.html">number</a></code>s. <em class="metavariable">Unit</em> is <code class="keyword">hour</code>, <code class="keyword">hours</code>, <code class="keyword">min</code>, <code class="keyword">mins</code>, <code class="keyword">minute</code>, <code class="keyword">minutes</code>, <code class="keyword">sec</code>, <code class="keyword">secs</code>, <code class="keyword">second</code>, <code class="keyword">seconds</code>, <code class="keyword">tick</code>, <code class="keyword">ticks</code>, <code class="keyword">milli</code>, <code class="keyword">millis</code>, <code class="keyword">millisecond</code>, or <code class="keyword">milliseconds</code>. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>tone</code> command plays a tone of a single <em class="metavariable">frequency</em> (in Hz) for a specified <em class="metavariable">duration</em>. Unless specified, the default <em class="metavariable">unit</em> for the <em class="metavariable">duration</em> is <code class="keyword">ticks</code>, or sixtieths of a second. The volume of the generated tone is determined by the <code><a href="../pr/tonevolume.html">toneVolume</a></code> property. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> The <code>tone</code> command is asynchronous: it will return immediately while the tone keeps playing in the background. If there is already a tone playing on the current <code><a href="../pr/tonechannel.html">toneChannel</a></code>, the next tone to be played will be added to a queue. The <code>stop tone</code> command will stop all currently-playing and pending tones on all <code><a href="../pr/tonechannel.html">toneChannel</a></code>s. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cm/stop.html">stop</a></code>, <code><a href="../fn/tone.html">tone</a></code>, <code><a href="../pr/tonevolume.html">toneVolume</a></code>, <code><a href="../pr/tonechannel.html">toneChannel</a></code></p>
+</body>
+</html>

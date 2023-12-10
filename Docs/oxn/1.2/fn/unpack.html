@@ -1,0 +1,329 @@
+<html>
+<head>
+<title>OpenXION 1.2 Functions - unpack</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.2, function, functions, unpack">
+<meta name="description" content="This page describes the unpack function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>unpack</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>OpenXION (1.2, 1.3, 1.4)</li>
+<li>OpenXION Extended Module (1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">unpack</code> <code class="keyword">of</code> <code class="keyword">(</code> <em class="metavariable">format</em> <code class="keyword">,</code> <em class="metavariable">data</em> <code class="keyword">)</code></p>
+<p class="block syntax indent0"><code class="keyword">unpack</code> <code class="keyword">(</code> <em class="metavariable">format</em> <code class="keyword">,</code> <em class="metavariable">data</em> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Format</em> yields a <code><a href="../dt/string.html">string</a></code> describing a binary data structure. <em class="metavariable">Data</em> yields a <code><a href="../dt/binary.html">binary</a></code>. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>unpack</code> function unpacks values from a <code><a href="../dt/binary.html">binary</a></code> according to the binary data structure specified by <em class="metavariable">format</em>. It is inspired by the <code>unpack</code> functions in Perl and PHP, but has a much more powerful syntax. </p>
+<p class="block paragraph indent0"> The <em class="metavariable">format</em> string can be specified in one of two ways. Using the short format, each field in the binary data structure is specified using the following syntax: </p>
+<p class="block syntax indent0"><em class="metavariable">type</em> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">size</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">elaboration</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">count</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">name</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">description</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> Only <em class="metavariable">type</em> is required. The <em class="metavariable">type</em> is a single character from the table below. Uppercase indicates big-endian values, and lowercase indicates little-endian values. The <em class="metavariable">size</em> is the number of bits. The <em class="metavariable">elaboration</em> is a type-specific string that must be enclosed in braces; for further details, see the table below. If a <em class="metavariable">count</em> is specified, the unpacked <em class="metavariable">value</em> is a <code><a href="../dt/list.html">list</a></code>, and the <em class="metavariable">count</em> must be a number enclosed in brackets indicating the number of elements in the list; otherwise, the unpacked <em class="metavariable">value</em> is a single value. (Except for the <code>*</code> and <code>@</code> types, where the <em class="metavariable">count</em> is the number of bytes and the offset, respectively.) The <em class="metavariable">name</em> is a string enclosed in backticks (<code>`</code>). The <em class="metavariable">description</em> is a string enclosed in quotes. The <em class="metavariable">name</em> and <em class="metavariable">description</em> have no effect on the packing or unpacking of the data. Whitespace in the format string is ignored except for inside quotes and as a token separator. </p>
+<p class="block paragraph indent0"> Using the long format, each field in the binary data structure is specified using the following syntax: </p>
+<p class="block syntax indent0"><em class="metavariable">type</em> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">size</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">endianness</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">elaboration</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">count</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">name</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">description</em><span class="metasymbol">]</span></span> <code class="keyword">;</code></p>
+<p class="block paragraph indent0"> Only <em class="metavariable">type</em> is required. The <em class="metavariable">type</em> is a type name from the table below. The <em class="metavariable">size</em> is the number of bits. The <em class="metavariable">endianness</em> is <code>be</code> for big-endian or <code>le</code> for little-endian; if <em class="metavariable">endianness</em> is not specified, big-endian is assumed. The <em class="metavariable">elaboration</em> is a type-specific string that must be enclosed in braces; for further details, see the table below. If a <em class="metavariable">count</em> is specified, the unpacked <em class="metavariable">value</em> is a <code><a href="../dt/list.html">list</a></code>, and the <em class="metavariable">count</em> must be a number enclosed in brackets indicating the number of elements in the list; otherwise, the unpacked <em class="metavariable">value</em> is a single value. (Except for the <code>binary</code> and <code>offset</code> types, where the <em class="metavariable">count</em> is the number of bytes and the offset, respectively.) The <em class="metavariable">name</em> is either a sequence of alphanumeric characters, or a string enclosed in backticks (<code>`</code>). The <em class="metavariable">description</em> is a string enclosed in quotes, or any sequence of characters following the name and preceding the terminating semicolon. The <em class="metavariable">name</em> and <em class="metavariable">description</em> have no effect on the packing or unpacking of the data. Whitespace in the format string is ignored except for inside quotes and as a token separator. </p>
+<p class="block paragraph indent0"> The possible field <em class="metavariable">type</em>s are: </p>
+<table class="block table indent0 border0">
+<tr>
+<td><code>T</code>, <code>t</code></td>
+<td><code>bool</code>, <code>boolean</code></td>
+<td> A boolean value (<code>T</code> for &quot;truth value&quot;). The unpacked <em class="metavariable">value</em> is <code><a href="../cn/false.html">false</a></code> for a packed value of zero or <code><a href="../cn/true.html">true</a></code> for a packed value of one (or any other value when unpacking). </td>
+</tr>
+<tr>
+<td><code>E</code>, <code>e</code></td>
+<td><code>enum</code></td>
+<td> An enumeration. The <em class="metavariable">elaboration</em> is a list of key-value pairs, delimited by semicolons, with the key and value separated by an equals sign. Each key is an integer representing a possible packed value and each value is a string. The unpacked <em class="metavariable">value</em> is one of those strings. </td>
+</tr>
+<tr>
+<td><code>J</code>, <code>j</code></td>
+<td><code>bitfield</code></td>
+<td> A bit field (<code>J</code> for &quot;jumper&quot;). The <em class="metavariable">elaboration</em> is a list of key-value pairs, delimited by semicolons, with the key and value separated by an equals sign. Each key is an integer representing a bit in the packed value (from 0 for the least-significant bit to <em class="metavariable">size</em>-1 for the most-significant bit) and each value is a string. The unpacked <em class="metavariable">value</em> is a comma-delimited list of such strings. </td>
+</tr>
+<tr>
+<td><code>B</code>, <code>b</code></td>
+<td><code>bint</code></td>
+<td> An unsigned integer in binary. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/string.html">string</a></code> of binary digits. </td>
+</tr>
+<tr>
+<td><code>O</code>, <code>o</code></td>
+<td><code>oint</code></td>
+<td> An unsigned integer in octal. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/string.html">string</a></code> of octal digits. </td>
+</tr>
+<tr>
+<td><code>H</code>, <code>h</code></td>
+<td><code>hint</code></td>
+<td> An unsigned integer in hexadecimal. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/string.html">string</a></code> of hexadecimal digits. </td>
+</tr>
+<tr>
+<td><code>U</code>, <code>u</code></td>
+<td><code>uint</code></td>
+<td> An unsigned integer. The unpacked <em class="metavariable">value</em> is an <code><a href="../dt/integer.html">integer</a></code>. </td>
+</tr>
+<tr>
+<td><code>I</code>, <code>i</code></td>
+<td><code>int</code>, <code>sint</code></td>
+<td> A signed integer. The unpacked <em class="metavariable">value</em> is an <code><a href="../dt/integer.html">integer</a></code>. </td>
+</tr>
+<tr>
+<td><code>R</code>, <code>r</code></td>
+<td><code>ufixed</code></td>
+<td> An unsigned fixed-point number (<code>R</code> for &quot;ratio&quot;). The radix point is fixed in the center of the packed value (e.g., at bit 8 if the <em class="metavariable">size</em> is 16). The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/number.html">number</a></code>. </td>
+</tr>
+<tr>
+<td><code>Q</code>, <code>q</code></td>
+<td><code>fixed</code>, <code>sfixed</code></td>
+<td> A signed fixed-point number (<code>Q</code> for &quot;quotient&quot;). The radix point is fixed in the center of the packed value (e.g., at bit 8 if the <em class="metavariable">size</em> is 16). The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/number.html">number</a></code>. </td>
+</tr>
+<tr>
+<td><code>F</code>, <code>f</code></td>
+<td><code>float</code></td>
+<td> A floating-point number. The <em class="metavariable">elaboration</em> is the number of sign bits, the number of exponent bits, the number of mantissa bits, and the exponent bias, separated by periods. If the <em class="metavariable">elaboration</em> is not specified, a best guess is made at the appropriate number of bits and the appropriate bias based on the <em class="metavariable">size</em>. For <em class="metavariable">size</em>s of 16, 32, 64, and 128 bits, this &quot;best guess&quot; is guaranteed to be <code>1.5.10.15</code>, <code>1.8.23.127</code>, <code>1.11.52.1023</code>, and <code>1.15.112.16383</code>, respectively, corresponding to IEEE half-, single-, double-, and quad-precision floating-point numbers. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/number.html">number</a></code>. </td>
+</tr>
+<tr>
+<td><code>K</code>, <code>k</code></td>
+<td><code>complex</code></td>
+<td> A complex number, composed of two floating-point numbers (the real part followed by the imaginary part). The <em class="metavariable">size</em> is the number of bits per part, rather than total. The <em class="metavariable">elaboration</em> is the same as for <code>float</code> above. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/complex.html">complex</a></code>. </td>
+</tr>
+<tr>
+<td><code>C</code>, <code>c</code></td>
+<td><code>char</code>, <code>character</code></td>
+<td> A character constant. The <em class="metavariable">size</em> must be a multiple of 8. The <em class="metavariable">elaboration</em> is the name of a text encoding. If the <em class="metavariable">elaboration</em> is unspecified, <code>ISO-8859-1</code> is assumed. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/string.html">string</a></code>. </td>
+</tr>
+<tr>
+<td><code>P</code>, <code>p</code></td>
+<td><code>pstring</code></td>
+<td> A Pascal-style string. The <em class="metavariable">size</em> is the number of bits in the count preceding the actual string data. The <em class="metavariable">elaboration</em> is the name of a text encoding. If the <em class="metavariable">elaboration</em> is unspecified, <code>ISO-8859-1</code> is assumed. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/string.html">string</a></code>. </td>
+</tr>
+<tr>
+<td><code>S</code>, <code>s</code></td>
+<td><code>string</code>, <code>cstring</code></td>
+<td> A C-style string. The <em class="metavariable">size</em> is the number of zero bits following the actual string data and must be a multiple of 8. The <em class="metavariable">elaboration</em> is the name of a text encoding. If the <em class="metavariable">elaboration</em> is unspecified, <code>ISO-8859-1</code> is assumed. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/string.html">string</a></code>. </td>
+</tr>
+<tr>
+<td><code>D</code>, <code>d</code></td>
+<td><code>date</code>, <code>time</code>, <code>datetime</code></td>
+<td> A date. The <em class="metavariable">elaboration</em> is the year, month, day, hour, minute, and second of the epoch, and the scale (0 for seconds, -3 for milliseconds, -6 for microseconds, etc.), each delimited by commas. If the <em class="metavariable">elaboration</em> is unspecified, <code>1970,1,1,0,0,0,0</code> is assumed, corresponding to the number of seconds since January 1, 1970 (the Unix epoch). To use the Macintosh epoch, use <code>1904,1,1,0,0,0,0</code>. For milliseconds, replace the last number with -3. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/date.html">date</a></code>. </td>
+</tr>
+<tr>
+<td><code>X</code>, <code>x</code></td>
+<td><code>color</code>, <code>colour</code></td>
+<td> A color (<code>X</code> for Greek <em class="metavariable">&#967;&#961;&#974;&#956;&#945;</em>, <em class="metavariable">chroma</em>, meaning &quot;color&quot;). The <em class="metavariable">elaboration</em> is a string determining the color model and the order and width of the color channels. The default is true color with alpha in ARGB order with <em class="metavariable">size</em>/4 bits per channel. For a <em class="metavariable">size</em> of 32 bits, this would be equivalent to an <em class="metavariable">elaboration</em> of <code>a8r8g8b8</code>. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/color.html">color</a></code>. </td>
+</tr>
+<tr>
+<td><code>Z</code>, <code>z</code></td>
+<td><code>filler</code></td>
+<td> A series of <em class="metavariable">size</em> filler bits (<code>Z</code> for &quot;zero&quot;). When packing, <em class="metavariable">size</em> bits are filled with zero. When unpacking, <em class="metavariable">size</em> bits are skipped and ignored. There is no unpacked <em class="metavariable">value</em> for this data type. </td>
+</tr>
+<tr>
+<td><code>M</code>, <code>m</code></td>
+<td><code>magic</code></td>
+<td> The <em class="metavariable">elaboration</em> is a magic number. When packing, the resulting packed value is the magic number. When unpacking, the packed value is checked against the magic number; if they don&#39;t match, a script error is triggered. There is no unpacked <em class="metavariable">value</em> for this data type. </td>
+</tr>
+<tr>
+<td><code>A</code>, <code>a</code></td>
+<td><code>align</code></td>
+<td> Alignment to a multiple of <em class="metavariable">size</em> bits. There is no unpacked <em class="metavariable">value</em> for this data type. </td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>blob</code>, <code>binary</code></td>
+<td> The <em class="metavariable">size</em>, <em class="metavariable">endianness</em>, and <em class="metavariable">elaboration</em> are ignored. The <em class="metavariable">count</em> is the number of bytes to pack or unpack. If the <em class="metavariable">count</em> is unspecified when unpacking, zero bytes are unpacked. If the <em class="metavariable">count</em> is unspecified when packing, however many bytes are in the unpacked <em class="metavariable">value</em> are packed. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/binary.html">binary</a></code>. </td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td><code>struct</code></td>
+<td> A substructure. The <em class="metavariable">elaboration</em> is a format string describing the binary data substructure. The unpacked <em class="metavariable">value</em> is a <code><a href="../dt/list.html">list</a></code> of unpacked <em class="metavariable">value</em>s from the specified substructure. </td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td><code>offset</code></td>
+<td> The <em class="metavariable">size</em>, <em class="metavariable">endianness</em>, and <em class="metavariable">elaboration</em> are ignored. The <em class="metavariable">count</em> is an offset from the beginning of the packed <code><a href="../dt/binary.html">binary</a></code> where future values are packed to or unpacked from. When unpacking, the offset may be anywhere in the <code><a href="../dt/binary.html">binary</a></code>. When packing, the offset must be greater than or equal to the number of bytes already packed. </td>
+</tr>
+</table>
+<p class="block paragraph indent0"> In addition to the type names listed above, the following special type names are allowed in a long-format <em class="metavariable">format</em> string. These special type names specify a size and, for some, an endianness and an <em class="metavariable">elaboration</em> in addition to a data type. </p>
+<table class="block table indent0 border0">
+<tr>
+<td><code>bbyte</code></td>
+<td>alias for <code>bint8</code></td>
+</tr>
+<tr>
+<td><code>obyte</code></td>
+<td>alias for <code>oint8</code></td>
+</tr>
+<tr>
+<td><code>hbyte</code></td>
+<td>alias for <code>hint8</code></td>
+</tr>
+<tr>
+<td><code>ubyte</code></td>
+<td>alias for <code>uint8</code></td>
+</tr>
+<tr>
+<td><code>sbyte</code></td>
+<td>alias for <code>sint8</code></td>
+</tr>
+<tr>
+<td><code>byte</code></td>
+<td>alias for <code>int8</code></td>
+</tr>
+<tr>
+<td><code>bshort</code></td>
+<td>alias for <code>bint16</code></td>
+</tr>
+<tr>
+<td><code>oshort</code></td>
+<td>alias for <code>oint16</code></td>
+</tr>
+<tr>
+<td><code>hshort</code></td>
+<td>alias for <code>hint16</code></td>
+</tr>
+<tr>
+<td><code>ushort</code></td>
+<td>alias for <code>uint16</code></td>
+</tr>
+<tr>
+<td><code>sshort</code></td>
+<td>alias for <code>sint16</code></td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>alias for <code>int16</code></td>
+</tr>
+<tr>
+<td><code>blong</code></td>
+<td>alias for <code>bint64</code></td>
+</tr>
+<tr>
+<td><code>olong</code></td>
+<td>alias for <code>oint64</code></td>
+</tr>
+<tr>
+<td><code>hlong</code></td>
+<td>alias for <code>hint64</code></td>
+</tr>
+<tr>
+<td><code>ulong</code></td>
+<td>alias for <code>uint64</code></td>
+</tr>
+<tr>
+<td><code>slong</code></td>
+<td>alias for <code>sint64</code></td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>alias for <code>int64</code></td>
+</tr>
+<tr>
+<td><code>half</code></td>
+<td>alias for <code>float16</code></td>
+</tr>
+<tr>
+<td><code>single</code></td>
+<td>alias for <code>float32</code></td>
+</tr>
+<tr>
+<td><code>real</code></td>
+<td>alias for <code>float32</code></td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>alias for <code>float64</code></td>
+</tr>
+<tr>
+<td><code>quad</code></td>
+<td>alias for <code>float128</code></td>
+</tr>
+<tr>
+<td><code>onecc</code></td>
+<td>alias for <code>char8</code></td>
+</tr>
+<tr>
+<td><code>occ</code></td>
+<td>alias for <code>char8</code></td>
+</tr>
+<tr>
+<td><code>twocc</code></td>
+<td>alias for <code>char16</code></td>
+</tr>
+<tr>
+<td><code>tcc</code></td>
+<td>alias for <code>char16</code></td>
+</tr>
+<tr>
+<td><code>fourcc</code></td>
+<td>alias for <code>char32</code></td>
+</tr>
+<tr>
+<td><code>fcc</code></td>
+<td>alias for <code>char32</code></td>
+</tr>
+<tr>
+<td><code>eightcc</code></td>
+<td>alias for <code>char64</code></td>
+</tr>
+<tr>
+<td><code>ecc</code></td>
+<td>alias for <code>char64</code></td>
+</tr>
+<tr>
+<td><code>wstring</code></td>
+<td>alias for <code>pstring16</code></td>
+</tr>
+<tr>
+<td><code>lstring</code></td>
+<td>alias for <code>pstring32</code></td>
+</tr>
+<tr>
+<td><code>wchar</code></td>
+<td>alias for <code>char16be{UTF-16}</code></td>
+</tr>
+<tr>
+<td><code>wcharbe</code></td>
+<td>alias for <code>char16be{UTF-16}</code></td>
+</tr>
+<tr>
+<td><code>wcharle</code></td>
+<td>alias for <code>char16le{UTF-16}</code></td>
+</tr>
+<tr>
+<td><code>ostype</code></td>
+<td>alias for <code>char32be{MacRoman}</code></td>
+</tr>
+<tr>
+<td><code>symbol</code></td>
+<td>alias for <code>char64be{ISO-8859-1}</code></td>
+</tr>
+<tr>
+<td><code>point</code></td>
+<td>alias for <code>struct{sint16be y; sint16be x;}</code></td>
+</tr>
+<tr>
+<td><code>rect</code></td>
+<td>alias for <code>struct{sint16be top; sint16be left; sint16be bottom; sint16be right;}</code></td>
+</tr>
+<tr>
+<td><code>rectangle</code></td>
+<td>alias for <code>struct{sint16be top; sint16be left; sint16be bottom; sint16be right;}</code></td>
+</tr>
+<tr>
+<td><code>rgbcolor</code></td>
+<td>alias for <code>struct{uint16be red; uint16be green; uint16be blue;}</code></td>
+</tr>
+<tr>
+<td><code>rgbcolour</code></td>
+<td>alias for <code>struct{uint16be red; uint16be green; uint16be blue;}</code></td>
+</tr>
+</table>
+<h3>Notes</h3>
+<p class="block paragraph indent0"> If the <em class="metavariable">format</em> string is not properly formed, a script error is triggered. </p>
+<p class="block paragraph indent0"> If the <em class="metavariable">data</em> are shorter than required by the <em class="metavariable">format</em>, the missing bytes are assumed to be zero. If the <em class="metavariable">data</em> are longer than required by the <em class="metavariable">format</em>, the extra bytes are ignored. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../fn/pack.html">pack</a></code></p>
+</body>
+</html>

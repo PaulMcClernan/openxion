@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>XION Data Types - reference</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, data type, data types, reference">
+<meta name="description" content="This page describes the reference data type.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Data Types</h1>
+<h2>reference</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.3, 1.4)</li>
+</ul>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>reference</code> data type is a non-container data type that points to a <code><a href="../dt/variant.html">variant</a></code> that may or may not be a container. In <code><a href="../dt/string.html">string</a></code> form, a <code>reference</code> appears as a descriptor or XION literal. </p>
+<p class="block paragraph indent0"> A <code>reference</code> is used to freely pass around a container. When an attempt is made to put a container into a variable, <code><a href="../dt/list.html">list</a></code>, <code><a href="../dt/dictionary.html">dictionary</a></code>, or other container, or to pass a container as a parameter to a message or function handler, the container&#39;s contents are passed instead. In order to pass around the container itself, a reference must be created. </p>
+<h3>Script</h3>
+<p class="block paragraph indent0"> The following example illustrates using references to change a string. In this example, we want to pass in the <em>container</em> <code>last word of greeting</code>. However, if we were to naively pass in <code>last word of greeting</code>, the actual last word, <code>&quot;Becky.&quot;</code>, would be passed in instead. So instead, we pass in a reference. </p>
+<pre class="block script indent0">
+on tweak what as reference, newValue as string
+  put newValue into the referent of what
+end tweak
+
+local greeting as string
+put "Hello, my name is Rebecca. But you can call me Becky." into greeting
+tweak (a reference to last word of greeting), "Beckie."
+</pre>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../op/a_reference_to.html">a reference to</a></code>, <code><a href="../op/the_referent_of.html">the referent of</a></code></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>OpenXION Base 1.3 Operators - isn&#39;t a</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Base, OpenXION Base 1.3, operator, operators, isn&#39;t a">
+<meta name="description" content="This page describes the isn&#39;t a operator.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Operators</h1>
+<h2>isn&#39;t a</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><em class="metavariable">expression</em> <code class="keyword">isn&#39;t</code> <code class="keyword">a</code> <em class="metavariable">type</em></p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>isn&#39;t a</code> operator evaluates to <code>true</code> if the given value <em>cannot</em> be converted to the given type. If the given value <em>can</em> be converted to the given type, the <code>isn&#39;t a</code> operator evaluates to <code>false</code>. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> In HyperTalk, you can only use <code>isn&#39;t a</code> to test if some value is not an <code>integer</code>, a <code>number</code>, a <code>date</code>, a <code>point</code>, or a <code>rectangle</code>. However, the test for a <code>date</code> will reject just about any string to the point of being nearly useless, and the tests for <code>point</code> and <code>rectangle</code> are broken: if the value is not a comma-delimited list of integers, the expression will trigger an &quot;Expected integer here&quot; script error instead of evaluating to <code>true</code>. XION will always consider something not a <code>date</code> if it cannot actually be converted to one, and will never trigger a script error when evaluating the <code>isn&#39;t a</code> operator. </p>
+<h3>Synonyms</h3>
+<p class="block paragraph indent0"><code><a href="../op/are_not.html">are not</a></code>, <code><a href="../op/aren_t.html">aren&#39;t</a></code>, <code><a href="../op/is_not_a.html">is not a</a></code>, <code><a href="../op/is_not_an.html">is not an</a></code>, <code><a href="../op/isn_t_an.html">isn&#39;t an</a></code></p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../op/is_a.html">is a</a></code>, <code><a href="../op/is_precisely_a.html">is precisely a</a></code>, <code><a href="../op/is_not_precisely_a.html">is not precisely a</a></code>, <code><a href="../op/as_a.html">as a</a></code></p>
+</body>
+</html>

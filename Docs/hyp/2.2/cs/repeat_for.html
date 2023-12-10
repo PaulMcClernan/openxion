@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>HyperTalk 2.2 Control Structures - repeat for</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, HyperTalk, HyperTalk 2.2, control structure, control structures, repeat for">
+<meta name="description" content="This page describes the repeat for control structure.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Control Structures</h1>
+<h2>repeat for</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">repeat</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">forever</code><span class="metasymbol">]</span></span> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">statementList</em> <br/> <code class="keyword">end</code> <code class="keyword">repeat</code></p>
+<p class="block syntax indent0"><code class="keyword">repeat</code> <span class="optional"><span class="metasymbol">[</span><code class="keyword">for</code><span class="metasymbol">]</span></span> <em class="metavariable">number</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">times</code><span class="metasymbol">]</span></span> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">statementList</em> <br/> <span class="optional"><span class="metasymbol">[</span><span class="choice"><span class="metasymbol">(</span><code class="keyword">lastly</code><span class="metasymbol">|</span><code class="keyword">then</code><span class="metasymbol">|</span><code class="keyword">else</code><span class="metasymbol">)</span></span> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">statementList</em><span class="metasymbol">]</span></span> <br/> <code class="keyword">end</code> <code class="keyword">repeat</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Number</em> yields a non-negative <code><a href="../dt/integer.html">integer</a></code> specifying how many times the loop is executed. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+put zero into x
+repeat forever
+  add 1 to x
+  put x
+  if x is ten then exit repeat
+end repeat
+</pre>
+<pre class="block script indent0">
+put one into x
+repeat 10
+  put x
+  add 1 to x
+end repeat
+</pre>
+<pre class="block script indent0">
+put one into x
+repeat 10 times
+  put x
+  add 1 to x
+end repeat
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>repeat for</code> structure without a number causes all the statements inside to execute in a loop until an <code><a href="../cs/exit.html">exit</a></code>, <code><a href="../cs/pass.html">pass</a></code>, <code><a href="../cs/return.html">return</a></code>, or <code>throw</code> keyword is reached. The <code>repeat for</code> structure with a number causes all the statements inside to execute in a loop with the specified number of iterations. </p>
+<p class="block paragraph indent0"> In OpenXION 1.3 and later, the statements under a <code>lastly</code>, <code><a href="../cs/then.html">then</a></code>, or <code><a href="../cs/else.html">else</a></code> keyword inside a <code><a href="../cs/repeat.html">repeat</a></code> structure will be executed when the loop ends, <strong>unless</strong> the loop has ended because of an <code><a href="../cs/exit.html">exit</a></code>, <code><a href="../cs/pass.html">pass</a></code>, <code><a href="../cs/return.html">return</a></code>, or <code>throw</code>. </p>
+<h3>Synonym</h3>
+<p class="block paragraph indent0"><code><a href="../cs/repeat.html">repeat</a></code></p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cs/repeat_until.html">repeat until</a></code>, <code><a href="../cs/repeat_while.html">repeat while</a></code>, <code><a href="../cs/repeat_with.html">repeat with</a></code></p>
+</body>
+</html>

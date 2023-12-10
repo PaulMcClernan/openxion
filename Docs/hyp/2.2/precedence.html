@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>HyperTalk 2.2 Operator Precedence Table</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, HyperTalk, HyperTalk 2.2, operator, operators, operator precedence, operator precedence chart, operator precedence table">
+<meta name="description" content="This page shows the order of precedence of operators in HyperTalk.">
+<link rel="stylesheet" type="text/css" href="xiondoc.css">
+</head>
+<body>
+<h1>HyperTalk Operator Precedence Table</h1>
+<p class="block paragraph indent0">The table below shows the order of precedence of operators in HyperTalk. In a complex expression containing more than one operator, the operations indicated by operators with lower-numbered precedence will be performed before those with higher-numbered precedence. Operators of equal precedence are evaluated left-to-right, except for exponentiation, which goes right-to-left. If you use parentheses, the innermost parenthetical expression is evaluated first.</p>
+<table class="block table indent0 border0 linedrowgroups">
+<thead>
+<tr>
+<th>Order</th>
+<th>Operators</th>
+<th>Type of Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1 - Unary &amp; Conditional</td><td><code><a href="op/not.html">not</a></code></td><td>Negation for boolean values</td></tr>
+<tr><td></td><td><code><a href="op/there_is_a.html">there is a</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_is_an.html">there is an</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_is_not_a.html">there is not a</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/there_is_not_an.html">there is not an</a></code></td><td>Boolean test for existence</td></tr>
+<tr><td></td><td><code><a href="op/$2212.html">&#8722;</a></code></td><td>Negation for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>2 - Exponentiation</td><td><code><a href="op/$005E.html">^</a></code></td><td>Exponentiation for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>3 - Multiplication</td><td><code><a href="op/div.html">div</a></code></td><td>Division for numbers</td></tr>
+<tr><td></td><td><code><a href="op/mod.html">mod</a></code></td><td>Modulus for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$002A.html">*</a></code></td><td>Multiplication for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$002F.html">/</a></code></td><td>Division for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>4 - Addition</td><td><code><a href="op/$002B.html">+</a></code></td><td>Addition for numbers</td></tr>
+<tr><td></td><td><code><a href="op/$002D.html">-</a></code></td><td>Subtraction for numbers</td></tr>
+</tbody>
+<tbody>
+<tr><td>5 - String Concatenation</td><td><code><a href="op/$0026.html">&amp;</a></code></td><td>Concatenation for strings</td></tr>
+<tr><td></td><td><code><a href="op/$0026$0026.html">&amp;&amp;</a></code></td><td>Concatenation for strings</td></tr>
+</tbody>
+<tbody>
+<tr><td>6 - Relational</td><td><code><a href="op/contains.html">contains</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_in.html">is in</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_in.html">is not in</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_of.html">is not of</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not_within.html">is not within</a></code></td><td>Boolean test for point within rectangle</td></tr>
+<tr><td></td><td><code><a href="op/is_of.html">is of</a></code></td><td>Comparison for strings</td></tr>
+<tr><td></td><td><code><a href="op/is_within.html">is within</a></code></td><td>Boolean test for point within rectangle</td></tr>
+<tr><td></td><td><code><a href="op/$003C.html">&lt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003C$003D.html">&lt;=</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003E.html">&gt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003E$003D.html">&gt;=</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2264.html">&#8804;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2265.html">&#8805;</a></code></td><td>Comparison for numbers or strings</td></tr>
+</tbody>
+<tbody>
+<tr><td>7 - Polymorphic</td><td><code><a href="op/is_a.html">is a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_an.html">is an</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_not_a.html">is not a</a></code></td><td>Comparison for types</td></tr>
+<tr><td></td><td><code><a href="op/is_not_an.html">is not an</a></code></td><td>Comparison for types</td></tr>
+</tbody>
+<tbody>
+<tr><td>8 - Equivalence</td><td><code><a href="op/is.html">is</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/is_not.html">is not</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003C$003E.html">&lt;&gt;</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$003D.html">=</a></code></td><td>Comparison for numbers or strings</td></tr>
+<tr><td></td><td><code><a href="op/$2260.html">&#8800;</a></code></td><td>Comparison for numbers or strings</td></tr>
+</tbody>
+<tbody>
+<tr><td>9 - Boolean AND</td><td><code><a href="op/and.html">and</a></code></td><td>Logical AND for boolean values</td></tr>
+</tbody>
+<tbody>
+<tr><td>10 - Boolean OR</td><td><code><a href="op/or.html">or</a></code></td><td>Logical OR for boolean values</td></tr>
+</tbody>
+</table>
+</body>
+</html>

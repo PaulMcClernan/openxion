@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>XION Scripting Language Standard 1.0 Control Structures - pass</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, XION Scripting Language Standard, XION Scripting Language Standard 1.0, control structure, control structures, pass">
+<meta name="description" content="This page describes the pass control structure.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Control Structures</h1>
+<h2>pass</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">pass</code> <em class="metavariable">handlerName</em></p>
+<p class="block syntax indent0"><code class="keyword">pass</code> <code class="keyword">to</code> <em class="metavariable">object</em></p>
+<p class="block paragraph indent0"> <em class="metavariable">HandlerName</em> is the name of the handler containing the <code>pass</code> statement. <em class="metavariable">Object</em> yields a <code><a href="../dt/variant.html">variant</a></code> able to respond to messages. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>pass</code> statement ends execution of the handler and sends the entire message or function call that initiated execution of the handler to the next object in the hierarchy. </p>
+<p class="block paragraph indent0"> The <code>pass to</code> form ends execution of the handler and sends the entire message or function call that initiated execution of the handler to the specified object instead. The statement <code>pass to interpreter</code> will send the message or function call to the interpreter, bypassing the hierarchy completely, resulting in the execution of a built-in command or the evaluation of a built-in function. </p>
+<h3>Notes</h3>
+<p class="block paragraph indent0"> Unlike the <code><a href="../cs/send.html">send</a></code> and <code><a href="../cs/tell.html">tell</a></code> structures, <code>pass</code> never returns to the handler or script containing the <code>pass</code> statement. </p>
+<p class="block paragraph indent0"> HyperTalk does not support the <code>pass to</code> form. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cs/on.html">on</a></code>, <code><a href="../cs/function.html">function</a></code>, <code><a href="../cs/end.html">end</a></code>, <code><a href="../cs/exit.html">exit</a></code>, <code><a href="../cs/send.html">send</a></code>, <code><a href="../cs/tell.html">tell</a></code></p>
+</body>
+</html>

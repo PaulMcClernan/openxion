@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>OpenXION 1.2 Functions - rot13</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.2, function, functions, rot13">
+<meta name="description" content="This page describes the rot13 function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>rot13</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">rot13</code> <code class="keyword">of</code> <em class="metavariable">factor</em></p>
+<p class="block syntax indent0"><code class="keyword">rot13</code> <code class="keyword">(</code> <em class="metavariable">expression</em> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Factor</em> and <em class="metavariable">expression</em> yield <code><a href="../dt/string.html">string</a></code>s. </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>rot13</code> function returns the text passed to it enciphered (or deciphered) with the ROT13 substitution cipher. All a&#39;s in the text become n&#39;s, b&#39;s become o&#39;s, c&#39;s become p&#39;s, and so on and vice versa. </p>
+<p class="block paragraph indent0"> In the following example, the punchline of the joke has been enciphered with ROT13: </p>
+<pre class="block script indent0">
+How can you tell an extrovert from an introvert at NSA?
+Va gur ryringbef, gur rkgebireg ybbxf ng gur BGURE thl'f fubrf.
+</pre>
+<p class="block paragraph indent0"> Applying the ROT13 function to this text enciphers the setup and deciphers the punchline: </p>
+<pre class="block script indent0">
+Ubj pna lbh gryy na rkgebireg sebz na vagebireg ng AFN?
+In the elevators, the extrovert looks at the OTHER guy's shoes.
+</pre>
+<p class="block paragraph indent0"> A further application of the ROT13 function will return the original text. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> The ROT13 cipher should <strong>never</strong> be used for cryptographic purposes. </p>
+</body>
+</html>

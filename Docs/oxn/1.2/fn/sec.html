@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>OpenXION 1.2 Functions - sec</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.2, function, functions, sec">
+<meta name="description" content="This page describes the sec function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>sec</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">sec</code> <code class="keyword">of</code> <em class="metavariable">factor</em></p>
+<p class="block syntax indent0"><code class="keyword">sec</code> <code class="keyword">(</code> <em class="metavariable">expression</em> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Factor</em> and <em class="metavariable">expression</em> yield <code><a href="../dt/integer.html">integer</a></code>s, <code><a href="../dt/number.html">number</a></code>s, or <code><a href="../dt/complex.html">complex</a></code>es. </p>
+<h3>Example</h3>
+<pre class="block script indent0">
+put the sec of 2 -- yields -2.402998
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>sec</code> function returns the secant of the angle that is passed to it. The angle must be expressed in radians. </p>
+<p class="block paragraph indent0"> If the argument is an <code><a href="../dt/integer.html">integer</a></code> or a <code><a href="../dt/number.html">number</a></code>, a <code><a href="../dt/number.html">number</a></code> is returned. If the argument is a <code><a href="../dt/complex.html">complex</a></code>, a <code><a href="../dt/complex.html">complex</a></code> is returned. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> Radians can be converted to degrees with the <code><a href="../fn/todegrees.html">toDegrees</a></code> function, or by multiplying by 180 and dividing by <code><a href="../cn/pi.html">pi</a></code>. Degrees can be converted to radians with the <code><a href="../fn/toradians.html">toRadians</a></code> function, or by multiplying by <code><a href="../cn/pi.html">pi</a></code> and dividing by 180. </p>
+</body>
+</html>

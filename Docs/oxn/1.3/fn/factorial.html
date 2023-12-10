@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>OpenXION 1.3 Functions - factorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.3, function, functions, factorial">
+<meta name="description" content="This page describes the factorial function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>factorial</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">factorial</code> <code class="keyword">of</code> <em class="metavariable">factor</em></p>
+<p class="block syntax indent0"><code class="keyword">factorial</code> <code class="keyword">(</code> <em class="metavariable">expression</em> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Factor</em> and <em class="metavariable">expression</em> yield <code><a href="../dt/integer.html">integer</a></code>s, <code><a href="../dt/number.html">number</a></code>s, or <code><a href="../dt/complex.html">complex</a></code>es. </p>
+<h3>Example</h3>
+<p class="block paragraph indent0"> <code>put the <code>factorial</code> of 5 -- yields 120</code> </p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>factorial</code> function returns the factorial of its argument. For positive integers, the factorial is defined as the product of the integers from 1 to the specified integer, e.g. <code>fact(5) = 1 * 2 * 3 * 4 * 5 = 120</code>. For other real or complex numbers, the factorial is defined in terms of the <code><a href="../fn/gamma.html">gamma</a></code> function, i.e. <code><code><a href="../fn/fact.html">fact</a></code>(<em class="metavariable">n</em>) = <code><a href="../fn/gamma.html">gamma</a></code>(<em class="metavariable">n</em>+1)</code>. </p>
+<h3>Synonym</h3>
+<p class="block paragraph indent0"><code><a href="../fn/fact.html">fact</a></code></p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../fn/gamma.html">gamma</a></code>, <code><a href="../fn/beta.html">beta</a></code>, <code><a href="../fn/lnfactorial.html">lnfactorial</a></code>, <code><a href="../fn/lngamma.html">lngamma</a></code>, <code><a href="../fn/lnbeta.html">lnbeta</a></code></p>
+</body>
+</html>

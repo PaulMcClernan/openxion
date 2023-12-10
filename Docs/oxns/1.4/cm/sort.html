@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>OpenXION Standard Module 1.4 Commands - sort</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Standard Module, OpenXION Standard Module 1.4, command, commands, sort">
+<meta name="description" content="This page describes the sort command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>sort</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">sort</code> <em class="metavariable">container</em> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">direction</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><em class="metavariable">sortType</em><span class="metasymbol">]</span></span> <span class="optional"><span class="metasymbol">[</span><code class="keyword">by</code> <em class="metavariable">expression</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Direction</em> is <code class="keyword">ascending</code> or <code class="keyword">descending</code>. The default is <code class="keyword">ascending</code>. <em class="metavariable">SortType</em> is <code class="keyword">text</code>, <code class="keyword">numeric</code>, <code class="keyword">dateTime</code>, or <code class="keyword">international</code>. The default is <code class="keyword">text</code>. <em class="metavariable">Expression</em> is any expression. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+sort lines of steve by last word of each
+</pre>
+<pre class="block script indent0">
+sort items of bill descending numeric by word 2 of each
+</pre>
+<pre class="block script indent0">
+sort lines of steve ascending
+</pre>
+<pre class="block script indent0">
+sort items of bill dateTime
+</pre>
+<pre class="block script indent0">
+sort andy
+</pre>
+<pre class="block script indent0">
+sort it numeric
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>sort</code> command will sort chunks of a <code><a href="../dt/string.html">string</a></code>, elements of a <code><a href="../dt/list.html">list</a></code>, bytes of a <code><a href="../dt/binary.html">binary</a></code>, or child objects of an object that supports sorting. </p>
+<p class="block paragraph indent0"> The <code class="keyword">ascending</code> direction sorts in normal, ascending order, while the <code class="keyword">descending</code> direction sorts in reverse, descending order. </p>
+<p class="block paragraph indent0"> The <code class="keyword">text</code> sort type sorts by the Unicode code points of the characters in a string. The <code class="keyword">international</code> sort type sorts using the current locale&#39;s collation rules. The <code class="keyword">numeric</code> sort type sorts strings that look like numbers as numbers rather than strings. The <code class="keyword">dateTime</code> sort type sorts strings that look like dates as dates rather than strings. </p>
+<p class="block paragraph indent0"> The <code class="keyword">by</code> keyword sorts based on the values of the <em class="metavariable">expression</em>. The item being sorted is represented by the variable <code>each</code>. </p>
+</body>
+</html>

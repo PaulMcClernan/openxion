@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>OpenXION 1.4 Functions - randomDecimal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.4, function, functions, randomDecimal">
+<meta name="description" content="This page describes the randomDecimal function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>randomDecimal</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">the</code> <code class="keyword">randomDecimal</code></p>
+<p class="block syntax indent0"><code class="keyword">randomDecimal</code> <code class="keyword">()</code></p>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>randomDecimal</code> function returns a random real number between zero, exclusive, and one, inclusive. That is, it is possible for the returned value to be one, but not zero. </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> Most programming languages have a random number function that returns a number between zero, inclusive, and one, exclusive. That is, it is possible for the function to return zero, but not one. In XION, however, the <code>randomDecimal</code> function can return one, but not zero. For the terminally curious, this is due to the implementation of a <code>randomDecimal</code> function in KHyX, an extension stack for HyperCard; this also reflects the fact that the <code><a href="../fn/random.html">random</a></code> function can return the integer passed to it, but cannot return zero. To match the functionality of other languages, you can subtract the value returned from <code>randomDecimal</code> from one. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../fn/random.html">random</a></code>, <code><a href="../fn/randomrange.html">randomRange</a></code></p>
+</body>
+</html>

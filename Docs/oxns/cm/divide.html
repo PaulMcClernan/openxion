@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>OpenXION Standard Module Commands - divide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION Standard Module, command, commands, divide">
+<meta name="description" content="This page describes the divide command.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Commands</h1>
+<h2>divide</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>HyperTalk (2.2)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">divide</code> <em class="metavariable">container</em> <code class="keyword">by</code> <em class="metavariable">number</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">rounding</code> <em class="metavariable">roundingMethod</em><span class="metasymbol">]</span></span></p>
+<p class="block paragraph indent0"> <em class="metavariable">Number</em> yields an <code><a href="../dt/integer.html">integer</a></code>, a <code><a href="../dt/number.html">number</a></code>, or a <code><a href="../dt/complex.html">complex</a></code>. <em class="metavariable">Container</em> yields a container containing an <code><a href="../dt/integer.html">integer</a></code>, a <code><a href="../dt/number.html">number</a></code>, or a <code><a href="../dt/complex.html">complex</a></code>. <em class="metavariable">RoundingMethod</em> is <code class="keyword">up</code>, <code class="keyword">down</code>, or <code class="keyword">to</code>, <code class="keyword">toward</code>, or <code class="keyword">towards</code> <code class="keyword">zero</code>, <code class="keyword">infinity</code>, <code class="keyword">nearest</code>, <code class="keyword">even</code>, <code class="keyword">ceiling</code>, or <code class="keyword">floor</code>. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+divide total by 3
+</pre>
+<pre class="block script indent0">
+divide line 3 of steve by 10
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>divide</code> command divides the value of <em class="metavariable">container</em> by the value of <em class="metavariable">number</em> and leaves the result in <em class="metavariable">container</em>. The value in the container must be an <code><a href="../dt/integer.html">integer</a></code>, a <code><a href="../dt/number.html">number</a></code>, or a <code><a href="../dt/complex.html">complex</a></code> and is replaced with the new value. </p>
+<p class="block paragraph indent0"> If a <em class="metavariable">roundingMethod</em> is given, the result is rounded to an integer. The following table shows the correspondences among the various <em class="metavariable">roundingMethod</em>s, rounding functions, and division operators: </p>
+<table class="block table indent0 border0">
+<tr>
+<th><code>rounding</code> parameter</th>
+<th>function</th>
+<th>operator</th>
+<th><code>java.math.RoundingMode</code></th>
+</tr>
+<tr>
+<td><code>to ceiling</code></td>
+<td><code><a href="../fn/ceil.html">ceil</a></code></td>
+<td></td>
+<td><code>CEILING</code></td>
+</tr>
+<tr>
+<td><code>to floor</code></td>
+<td><code><a href="../fn/floor.html">floor</a></code></td>
+<td><code>div</code> / <code>mod</code></td>
+<td><code>FLOOR</code></td>
+</tr>
+<tr>
+<td><code>up</code> / <code>to infinity</code></td>
+<td><code><a href="../fn/aug.html">aug</a></code></td>
+<td></td>
+<td><code>UP</code></td>
+</tr>
+<tr>
+<td><code>down</code> / <code>to zero</code></td>
+<td><code><a href="../fn/trunc.html">trunc</a></code></td>
+<td><code>quot</code> / <code>rem</code></td>
+<td><code>DOWN</code></td>
+</tr>
+<tr>
+<td><code>to nearest</code></td>
+<td><code><a href="../fn/round.html">round</a></code></td>
+<td></td>
+<td><code>HALF_UP</code></td>
+</tr>
+<tr>
+<td><code>to even</code></td>
+<td><code><a href="../fn/rint.html">rint</a></code></td>
+<td></td>
+<td><code>HALF_EVEN</code></td>
+</tr>
+</table>
+<p class="block paragraph indent0"> See the <code><a href="../fn/ceil.html">ceil</a></code>, <code><a href="../fn/floor.html">floor</a></code>, <code><a href="../fn/aug.html">aug</a></code>, <code><a href="../fn/trunc.html">trunc</a></code>, <code><a href="../fn/round.html">round</a></code>, and <code><a href="../fn/rint.html">rint</a></code> functions for descriptions of how these rounding methods work. </p>
+<h3>Script</h3>
+<p class="block paragraph indent0"> The following example prints the percentage represented by a fraction of two numbers passed in as parameters: </p>
+<pre class="block script indent0">
+on percent steve, bill
+  divide steve by bill
+  put trunc(steve * 100) & "%"
+end percent
+</pre>
+<h3>Compatibility</h3>
+<p class="block paragraph indent0"> HyperTalk does not support the <code class="keyword">rounding</code> keyword. </p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cm/add.html">add</a></code>, <code><a href="../cm/subtract.html">subtract</a></code>, <code><a href="../cm/multiply.html">multiply</a></code>, <code><a href="../cm/modulo.html">modulo</a></code></p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>OpenXION 1.3 Control Structures - repeat for each</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.3, control structure, control structures, repeat for each">
+<meta name="description" content="This page describes the repeat for each control structure.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Control Structures</h1>
+<h2>repeat for each</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Base (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><code class="keyword">repeat</code> <code class="keyword">for</code> <code class="keyword">each</code> <em class="metavariable">variableName</em> <code class="keyword">in</code> <em class="metavariable">expression</em> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">statementList</em> <br/> <span class="optional"><span class="metasymbol">[</span><span class="choice"><span class="metasymbol">(</span><code class="keyword">lastly</code><span class="metasymbol">|</span><code class="keyword">then</code><span class="metasymbol">|</span><code class="keyword">else</code><span class="metasymbol">)</span></span> <br/> <span class="syntaxindent">&nbsp;&nbsp;</span> <em class="metavariable">statementList</em><span class="metasymbol">]</span></span> <br/> <code class="keyword">end</code> <code class="keyword">repeat</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Expression</em> yields a <code><a href="../dt/list.html">list</a></code>. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+repeat foreach x in (1,2,3,4,5,6,7,8,9,10)
+  put x
+end repeat
+</pre>
+<pre class="block script indent0">
+repeat for each x in words of "1 2 3 4 5 6 7 8 9 10"
+  put x
+end repeat
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>repeat for each</code> structure causes all the statements inside to execute in a loop with as many iterations as there are elements in the list, with the specified variable containing the first element of the list during the first iteration, the second element of the list during the second iteration, and so on. </p>
+<p class="block paragraph indent0"> In OpenXION 1.3 and later, the statements under a <code><a href="../cs/lastly.html">lastly</a></code>, <code><a href="../cs/then.html">then</a></code>, or <code><a href="../cs/else.html">else</a></code> keyword inside a <code><a href="../cs/repeat.html">repeat</a></code> structure will be executed when the loop ends, <strong>unless</strong> the loop has ended because of an <code><a href="../cs/exit.html">exit</a></code>, <code><a href="../cs/pass.html">pass</a></code>, <code><a href="../cs/return.html">return</a></code>, or <code><a href="../cs/throw.html">throw</a></code>. </p>
+<h3>Synonym</h3>
+<p class="block paragraph indent0"><code><a href="../cs/repeat_foreach.html">repeat foreach</a></code></p>
+<h3>See Also</h3>
+<p class="block paragraph indent0"><code><a href="../cs/repeat.html">repeat</a></code>, <code><a href="../cs/repeat_for.html">repeat for</a></code>, <code><a href="../cs/repeat_until.html">repeat until</a></code>, <code><a href="../cs/repeat_while.html">repeat while</a></code>, <code><a href="../cs/repeat_with.html">repeat with</a></code></p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>OpenXION 1.1 Functions - hash</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="XIONDoc 1.3">
+<meta name="keywords" content="XION, OpenXION, XIONDoc, XIONDocs, XION docs, OpenXION docs, XION documentation, OpenXION documentation, XION manual, OpenXION manual, HyperTalk, HyperTalk clone, xTalk, OpenXION, OpenXION 1.1, function, functions, hash">
+<meta name="description" content="This page describes the hash function.">
+<link rel="stylesheet" type="text/css" href="../xiondoc.css">
+</head>
+<body>
+<h1>Functions</h1>
+<h2>hash</h2>
+<h3>Supported By</h3>
+<ul class="block unorderedlist indent0 border0 nobullet">
+<li>XION Scripting Language Standard (1.0)</li>
+<li>OpenXION (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+<li>OpenXION Standard Module (1.0, 1.1, 1.2, 1.3, 1.4)</li>
+</ul>
+<h3>Syntax</h3>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">hash</code> <code class="keyword">of</code> <em class="metavariable">data</em></p>
+<p class="block syntax indent0"><span class="optional"><span class="metasymbol">[</span><code class="keyword">the</code><span class="metasymbol">]</span></span> <code class="keyword">hash</code> <code class="keyword">of</code> <code class="keyword">(</code> <em class="metavariable">data</em> <code class="keyword">,</code> <em class="metavariable">algorithm</em> <code class="keyword">)</code></p>
+<p class="block syntax indent0"><code class="keyword">hash</code> <code class="keyword">(</code> <em class="metavariable">data</em> <span class="optional"><span class="metasymbol">[</span><code class="keyword">,</code> <em class="metavariable">algorithm</em><span class="metasymbol">]</span></span> <code class="keyword">)</code></p>
+<p class="block paragraph indent0"> <em class="metavariable">Data</em> yields a <code><a href="../dt/binary.html">binary</a></code> or a <code><a href="../dt/string.html">string</a></code>. <em class="metavariable">Algorithm</em> yields the name of a hash algorithm. </p>
+<h3>Examples</h3>
+<pre class="block script indent0">
+put hash(steve, "Atkinson") into bill
+</pre>
+<pre class="block script indent0">
+put hash(data, "MD5") into md5
+</pre>
+<h3>Description</h3>
+<p class="block paragraph indent0"> The <code>hash</code> function hashes the specified <em class="metavariable">data</em> with the specified hash <em class="metavariable">algorithm</em> and returns an <code><a href="../dt/integer.html">integer</a></code>, a <code><a href="../dt/binary.html">binary</a></code>, or a <code><a href="../dt/string.html">string</a></code> containing the resulting hash. </p>
+<p class="block paragraph indent0"> If <em class="metavariable">data</em> is not a <code><a href="../dt/binary.html">binary</a></code>, it is converted to a <code><a href="../dt/string.html">string</a></code>, converted to lowercase, and then converted to a <code><a href="../dt/binary.html">binary</a></code> using the text encoding specified by the <code><a href="../pr/textencoding.html">textEncoding</a></code> property. </p>
+<p class="block paragraph indent0"> If the hash <em class="metavariable">algorithm</em> is not specified, the default is the Atkinson hash algorithm. The Atkinson algorithm is the only hash algorithm required by the XION Scripting Language Standard. The resulting hash is returned as an unsigned <code><a href="../dt/integer.html">integer</a></code>. The Atkinson hash algorithm is as follows: </p>
+<p class="block paragraph indent0"> <br/>if the binary is zero-length: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialize <em class="metavariable">hash</em> to <code>0x42696C6C</code> (<code>&#39;Bill&#39;</code>) <br/>else: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialize <em class="metavariable">hash</em> to zero <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialize <em class="metavariable">seed</em> to the unsigned value of the first byte, plus the number of bytes <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for each bit <em class="metavariable">b</em> in the binary, starting with the most significant bit of the first byte: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multiply <em class="metavariable">seed</em> by <code>0x41A7</code> <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while <em class="metavariable">seed</em> &#8805; <code>0x80000000</code>: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set <em class="metavariable">seed</em> to ( <em class="metavariable">seed</em> &amp; <code>0x7FFFFFFF</code> ) + ( <em class="metavariable">seed</em> &gt;&gt; 31 ) <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if <em class="metavariable">seed</em> = <code>0x7FFFFFFF</code>: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set <em class="metavariable">seed</em> to zero <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if bit <em class="metavariable">b</em> is set: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add <em class="metavariable">seed</em> to <em class="metavariable">hash</em> <br/>return the 32 least significant bits of <em class="metavariable">hash</em> </p>
+<h3>Note</h3>
+<p class="block paragraph indent0"> OpenXION supports Atkinson, returning an unsigned <code><a href="../dt/integer.html">integer</a></code>, as well as MD2, MD5, SHA-1, SHA-256, SHA-384, and SHA-512, returning a <code><a href="../dt/binary.html">binary</a></code>. </p>
+</body>
+</html>
