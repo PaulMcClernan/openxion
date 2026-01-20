@@ -4,6 +4,9 @@
 -- This is being tested primarily against OpenXION, but it should be compatible with LiveCode, OXT,
 -- SuperCard, or any other xTalk that supports 'do myScript as AppleScript' syntax, at least to some degree.
 
+global cr
+put return into cr
+
 on answer pDialogType,pDialogText,pParam1,pParam2,pParam3,pParam4,pParam5,pParam6
    put pDialogType,pDialogText,pParam1,pParam2,pParam3,pParam4,pParam5,pParam6
    switch pDialogType
@@ -245,3 +248,5 @@ On macToast pToastMsg, pToastTitle, pToastSubTitle, pToastSound
    -- end if
    do ("display notification " &quote& pToastMsg &quote& " with title "&quote& pToastTitle &quote&" subtitle "&quote& pToastSubTitle &quote& tToastSoundScrpt) as AppleScript
 end macToast
+
+Play 10 C4q E3e e2q e g2e gq ge e3h
